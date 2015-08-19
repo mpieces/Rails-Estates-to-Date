@@ -1,0 +1,32 @@
+
+<div id="sale-container" data-address="<%= @sale.address %>, <%= @sale.city%>, <%= @sale.state %>, <%= @sale.zip_code %>">
+
+    <h1><%= @sale.title %></h1>
+
+    <h2><%= @sale.address %></h2>
+    <h2><%= @sale.city%>, <%=@sale.state%></h2>
+    <h2><%= @sale.zip_code %></h2>
+    <h2><%= @sale.start_date %> - </h2>
+    <h2><%= @sale.end_date %></h2>
+    <h2><%= @sale.times %></h2>
+    <h3><em>Description:</em></h3>
+    <h3><%= @sale.description %></h3>
+    <h3><em>Forms of Payment Accepted:</em> <%= @sale.forms_of_payment %></h3>
+    <h3><em>Special Instructions:</em> <%= @sale.special_inst %></h3>
+    <h3>Photos: <img src="<%= @sale.img_url %>"></h3>
+
+    <!-- Edit listing button:  -->
+    <h3>
+      <%= link_to 'Edit this Listing', edit_estatesale_path(@sale) %>
+    </h3>
+    <h3>
+      <%= link_to 'Back', estatesales_path %>
+    </h3>
+
+    <%= erb :_errors %>
+
+    <!-- Delete listing button:  -->
+     <h3>
+      <%= link_to 'Delete Listing', estatesales_path(@sale), method: delete %>
+    </h3>
+  </div>
