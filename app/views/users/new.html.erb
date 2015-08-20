@@ -14,8 +14,10 @@
   <%= f.text_field :email %>
 </p>
 
+<!--  Use Javascript to populate rest of form based on response: -->
 <p>
- <!--  RADIO BUTTONS? -->
+   <%= f.select(:type, [["Shopper"], ["Lister"]]) %>
+</p>
 
 
 <p>

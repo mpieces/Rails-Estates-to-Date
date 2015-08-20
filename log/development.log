@@ -9449,3 +9449,2308 @@ ActionView::Template::Error (undefined method `username' for nil:NilClass):
   Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
   Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
   Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (30.5ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-08-19 20:06:46 -0700
+Processing by EstatesalesController#index as HTML
+  Rendered estatesales/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `username' for :current_user:Symbol):
+    1: 
+    2:   <h1>Welcome, <%= :current_user.username %>!</h1>
+    3: 
+    4: <!-- Zip code search form -->
+    5: 
+  app/views/estatesales/index.html.erb:2:in `_app_views_estatesales_index_html_erb___3925028779962298234_70222953600540'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.1ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-08-19 20:16:38 -0700
+Processing by EstatesalesController#index as HTML
+  [1m[36mEstatesale Load (0.2ms)[0m  [1mSELECT "estatesales".* FROM "estatesales"[0m
+  Rendered estatesales/index.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 115ms (Views: 113.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/estatesale.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:16:38 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:16:38 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-19 20:16:38 -0700
+
+
+Started GET "/assets/favorites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:16:38 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:16:38 -0700
+
+
+Started GET "/assets/application.self-ccf0c89a19c7a37e56567be63a8a956a5750fe092d482d1d307bf6efb8320b5e.css?body=1" for ::1 at 2015-08-19 20:16:38 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-19 20:16:38 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-19 20:16:38 -0700
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:16:38 -0700
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:16:38 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:16:38 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:16:38 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-19 20:16:38 -0700
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 20:16:38 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.5ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-08-19 20:17:00 -0700
+Processing by EstatesalesController#index as HTML
+  [1m[36mEstatesale Load (0.2ms)[0m  [1mSELECT "estatesales".* FROM "estatesales"[0m
+  Rendered estatesales/index.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/estatesale.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:17:00 -0700
+
+
+Started GET "/assets/favorites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:17:00 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-19 20:17:00 -0700
+
+
+Started GET "/assets/application.self-ccf0c89a19c7a37e56567be63a8a956a5750fe092d482d1d307bf6efb8320b5e.css?body=1" for ::1 at 2015-08-19 20:17:00 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:17:00 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:17:00 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-19 20:17:00 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-19 20:17:00 -0700
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:17:00 -0700
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:17:00 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:17:00 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:17:00 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-19 20:17:00 -0700
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 20:17:00 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.7ms)
+
+
+Started GET "/login" for ::1 at 2015-08-19 20:17:02 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for ::1 at 2015-08-19 20:17:05 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YQVt5IqKQ+xiIOOERnBcp3PZ+gMdDE5NN59WGEwNsopq+Jw3AJruoMCAoLrOFQ3iHG+1UynfyuJtfZUHfQylAw==", "session"=>{"username"=>"mer", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "mer"]]
+Redirected to http://localhost:3000/estatesales
+Completed 302 Found in 87ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-08-19 20:17:05 -0700
+Processing by EstatesalesController#index as HTML
+  [1m[36mEstatesale Load (0.2ms)[0m  [1mSELECT "estatesales".* FROM "estatesales"[0m
+  Rendered estatesales/index.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 116ms (Views: 114.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 20:17:05 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (30.3ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-08-19 20:20:10 -0700
+Processing by EstatesalesController#index as HTML
+  [1m[36mEstatesale Load (0.2ms)[0m  [1mSELECT "estatesales".* FROM "estatesales"[0m
+  Rendered estatesales/index.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 126ms (Views: 119.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/estatesale.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:20:11 -0700
+
+
+Started GET "/assets/favorites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:20:11 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:20:11 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:20:11 -0700
+
+
+Started GET "/assets/application.self-ccf0c89a19c7a37e56567be63a8a956a5750fe092d482d1d307bf6efb8320b5e.css?body=1" for ::1 at 2015-08-19 20:20:11 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-19 20:20:11 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-19 20:20:11 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-19 20:20:11 -0700
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:20:11 -0700
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:20:11 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:20:11 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:20:11 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-19 20:20:11 -0700
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 20:20:11 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (36.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (34.2ms)
+
+
+Started GET "/login" for ::1 at 2015-08-19 20:20:13 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for ::1 at 2015-08-19 20:20:17 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+uTFY71dNFVwm6sKbIhZ0d9likEiNg+iMMqoRjSefr/xGTSwN02ZGdI76DTk7QiUsNPFERbliw1qKGtZBZ9pNg==", "session"=>{"username"=>"mer", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "mer"]]
+Redirected to http://localhost:3000/estatesales
+Completed 302 Found in 80ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-08-19 20:20:17 -0700
+Processing by EstatesalesController#index as HTML
+  [1m[36mEstatesale Load (0.2ms)[0m  [1mSELECT "estatesales".* FROM "estatesales"[0m
+  Rendered estatesales/index.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 122ms (Views: 120.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 20:20:17 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.1ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-08-19 20:20:22 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rHp/c8UlRr+Weq7RSQ1/QaQvCnDojmeRs0Ef2SsR1OOnh46gTzXr8zTa7e/BaC4Ey5lFINxd4z7po9zGGhDDag=="}
+Redirected to http://localhost:3000/estatesales
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-08-19 20:20:22 -0700
+Processing by EstatesalesController#index as HTML
+  [1m[36mEstatesale Load (0.7ms)[0m  [1mSELECT "estatesales".* FROM "estatesales"[0m
+  Rendered estatesales/index.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 20:20:22 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (97.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (112.5ms)
+
+
+Started GET "/login" for ::1 at 2015-08-19 20:20:38 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for ::1 at 2015-08-19 20:20:42 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H9cGpOLj5CsKSGErXEjhHpF8vVBI53MXHfI0X56qm4gUKvd3aPNJZ6joIhXULbBb/sryAHw097hHEPdAr6uMAQ==", "session"=>{"username"=>"mer", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "mer"]]
+Redirected to http://localhost:3000/estatesales
+Completed 302 Found in 74ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-08-19 20:20:42 -0700
+Processing by EstatesalesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mEstatesale Load (0.2ms)[0m  SELECT "estatesales".* FROM "estatesales"
+  Rendered estatesales/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 20:20:42 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.6ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-08-19 20:21:44 -0700
+Processing by EstatesalesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mEstatesale Load (0.2ms)[0m  SELECT "estatesales".* FROM "estatesales"
+  Rendered estatesales/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 119ms (Views: 118.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/estatesale.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:21:44 -0700
+
+
+Started GET "/assets/favorites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:21:44 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:21:44 -0700
+
+
+Started GET "/assets/application.self-ccf0c89a19c7a37e56567be63a8a956a5750fe092d482d1d307bf6efb8320b5e.css?body=1" for ::1 at 2015-08-19 20:21:44 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:21:44 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-19 20:21:44 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-19 20:21:44 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-19 20:21:44 -0700
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:21:44 -0700
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:21:44 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:21:44 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:21:44 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-19 20:21:45 -0700
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 20:21:45 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (34.4ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-08-19 20:26:01 -0700
+Processing by EstatesalesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mEstatesale Load (0.2ms)[0m  SELECT "estatesales".* FROM "estatesales"
+  Rendered estatesales/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 118ms (Views: 116.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/estatesale.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:26:01 -0700
+
+
+Started GET "/assets/favorites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:26:01 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:26:01 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:26:01 -0700
+
+
+Started GET "/assets/application.self-ccf0c89a19c7a37e56567be63a8a956a5750fe092d482d1d307bf6efb8320b5e.css?body=1" for ::1 at 2015-08-19 20:26:01 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-19 20:26:01 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-19 20:26:01 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-19 20:26:01 -0700
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:26:01 -0700
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:26:01 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:26:01 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:26:01 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-19 20:26:01 -0700
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 20:26:01 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (27.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (40.6ms)
+
+
+Started GET "/estatesales/new" for ::1 at 2015-08-19 20:26:03 -0700
+Processing by EstatesalesController#new as HTML
+  Rendered estatesales/new.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 47ms (Views: 37.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-08-19 20:26:08 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YdHxaZzXRI2+JGYX1LmRaZiTk3VS0sUHor8p/9K1ZslqLAC6FsfpwRyEJSlc3MAs9yXcJWYBQaj4Xerg47RxQA=="}
+Redirected to http://localhost:3000/estatesales
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-08-19 20:26:08 -0700
+Processing by EstatesalesController#index as HTML
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered estatesales/index.html.erb within layouts/application (82.5ms)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 1.5ms)
+
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    1: 
+    2:   <h1>Welcome, <%= current_user.username %>!</h1>
+    3: 
+    4: <!-- Zip code search form -->
+    5: 
+  app/views/estatesales/index.html.erb:2:in `_app_views_estatesales_index_html_erb___3925028779962298234_70222953283800'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (25.4ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-08-19 20:27:58 -0700
+Processing by EstatesalesController#index as HTML
+  [1m[36mEstatesale Load (0.3ms)[0m  [1mSELECT "estatesales".* FROM "estatesales"[0m
+  Rendered estatesales/index.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/estatesale.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:27:58 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:27:58 -0700
+
+
+Started GET "/assets/favorites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:27:58 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:27:58 -0700
+
+
+Started GET "/assets/application.self-ccf0c89a19c7a37e56567be63a8a956a5750fe092d482d1d307bf6efb8320b5e.css?body=1" for ::1 at 2015-08-19 20:27:58 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-19 20:27:58 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-19 20:27:58 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-19 20:27:58 -0700
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:27:58 -0700
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:27:58 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:27:58 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:27:58 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-19 20:27:58 -0700
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 20:27:58 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (28.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.2ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 20:28:00 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (12.1ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `radio_button_tag' for #<ActionView::Helpers::FormBuilder:0x007fbc21340c80>):
+    16: 
+    17:  <!--  RADIO BUTTONS? -->
+    18: <p>
+    19:   <%= f.radio_button_tag(:type, "Shopper") %>
+    20:   <%= f.label_tag(:type, "I'm a shopper") %>
+    21:   <%= f.radio_button_tag(:type, "Lister") %>
+    22:   <%= f.label_tag(:type, "I'm a lister") %>
+  app/views/users/new.html.erb:19:in `block in _app_views_users_new_html_erb__2020661845405820430_70222951663780'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__2020661845405820430_70222951663780'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.2ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 20:28:01 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (92.3ms)
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `radio_button_tag' for #<ActionView::Helpers::FormBuilder:0x007fbc23895f08>):
+    16: 
+    17:  <!--  RADIO BUTTONS? -->
+    18: <p>
+    19:   <%= f.radio_button_tag(:type, "Shopper") %>
+    20:   <%= f.label_tag(:type, "I'm a shopper") %>
+    21:   <%= f.radio_button_tag(:type, "Lister") %>
+    22:   <%= f.label_tag(:type, "I'm a lister") %>
+  app/views/users/new.html.erb:19:in `block in _app_views_users_new_html_erb__2020661845405820430_70223013308080'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__2020661845405820430_70223013308080'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (77.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (94.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.4ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 20:28:50 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (15.4ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `radio_button_tag' for #<ActionView::Helpers::FormBuilder:0x007fbc2063edc0>):
+    17:  <!--  RADIO BUTTONS? -->
+    18: <p>
+    19: <%= form_tag do %>
+    20:   <%= f.radio_button_tag(:type, "Shopper") %>
+    21:   <%= f.label_tag(:type, "I'm a shopper") %>
+    22:   <%= f.radio_button_tag(:type, "Lister") %>
+    23:   <%= f.label_tag(:type, "I'm a lister") %>
+  app/views/users/new.html.erb:20:in `block (2 levels) in _app_views_users_new_html_erb__2020661845405820430_70222986976220'
+  app/views/users/new.html.erb:19:in `block in _app_views_users_new_html_erb__2020661845405820430_70222986976220'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__2020661845405820430_70222986976220'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (25.2ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 20:34:58 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (7.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/estatesale.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:34:58 -0700
+
+
+Started GET "/assets/favorites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:34:58 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:34:58 -0700
+
+
+Started GET "/assets/application.self-ccf0c89a19c7a37e56567be63a8a956a5750fe092d482d1d307bf6efb8320b5e.css?body=1" for ::1 at 2015-08-19 20:34:58 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:34:58 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-19 20:34:58 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-19 20:34:58 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-19 20:34:58 -0700
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:34:58 -0700
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:34:58 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:34:58 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:34:58 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-19 20:34:58 -0700
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 20:34:58 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (30.8ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 20:35:17 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 120ms (Views: 118.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/estatesale.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:35:17 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-19 20:35:17 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:35:17 -0700
+
+
+Started GET "/assets/application.self-ccf0c89a19c7a37e56567be63a8a956a5750fe092d482d1d307bf6efb8320b5e.css?body=1" for ::1 at 2015-08-19 20:35:17 -0700
+
+
+Started GET "/assets/favorites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:35:17 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:35:17 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-19 20:35:17 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-19 20:35:17 -0700
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:35:17 -0700
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:35:17 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:35:17 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:35:17 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-19 20:35:17 -0700
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 20:35:17 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (23.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (47.5ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 20:40:35 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    16: 
+    17:  <!--  RADIO BUTTONS? -->
+    18: <p>
+    19: <%= f.select(:type) do %>
+    20:   <% [['Shopper', 1], ['Lister', 2]] %>
+    21: <% end %>
+    22: </p>
+  app/views/users/new.html.erb:19:in `block in _app_views_users_new_html_erb__2020661845405820430_70223013902300'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__2020661845405820430_70223013902300'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.4ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 20:41:23 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    16: 
+    17:  <!--  RADIO BUTTONS? -->
+    18: <p>
+    19: <%= f.select(:type) %>
+    20: 
+    21: </p>
+    22: 
+  app/views/users/new.html.erb:19:in `block in _app_views_users_new_html_erb__2020661845405820430_70222994847520'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__2020661845405820430_70222994847520'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.2ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 20:42:26 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `merge' for "Shopper":String):
+    16: 
+    17:  <!--  RADIO BUTTONS? -->
+    18: <p>
+    19: <%= f.select(:type, "Lister", "Shopper") %>
+    20: 
+    21: </p>
+    22: 
+  app/views/users/new.html.erb:19:in `block in _app_views_users_new_html_erb__2020661845405820430_70222995474300'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__2020661845405820430_70222995474300'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 20:45:34 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (7.9ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 50ms (Views: 48.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/estatesale.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:45:35 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:45:35 -0700
+
+
+Started GET "/assets/favorites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:45:35 -0700
+
+
+Started GET "/assets/application.self-ccf0c89a19c7a37e56567be63a8a956a5750fe092d482d1d307bf6efb8320b5e.css?body=1" for ::1 at 2015-08-19 20:45:35 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:45:35 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-19 20:45:35 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-19 20:45:35 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-19 20:45:35 -0700
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:45:35 -0700
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:45:35 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:45:35 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:45:35 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-19 20:45:35 -0700
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 20:45:35 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.3ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 20:46:26 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/favorites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:46:26 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-19 20:46:26 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:46:26 -0700
+
+
+Started GET "/assets/estatesale.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:46:26 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:46:26 -0700
+
+
+Started GET "/assets/application.self-ccf0c89a19c7a37e56567be63a8a956a5750fe092d482d1d307bf6efb8320b5e.css?body=1" for ::1 at 2015-08-19 20:46:26 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-19 20:46:26 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-19 20:46:26 -0700
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:46:26 -0700
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:46:26 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:46:26 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:46:26 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-19 20:46:26 -0700
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 20:46:26 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.2ms)
+
+
+Started POST "/users" for ::1 at 2015-08-19 20:49:26 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"51lJcVOBlFMPs2lwZQFQ6/kzU3SUv8ARn8oDDfxcPCfspLii2ZE5H60TKk7tZAGuloUcJKBsRL7FKMASzV0rrg==", "user"=>{"username"=>"fred", "password"=>"[FILTERED]", "email"=>"fred@fred.com", "type"=>"true", "company_name"=>"Fred's Company", "owner_name"=>"Fred Jones", "company_url"=>"http://www.fred.com", "phone_number"=>"214-691-fred"}, "commit"=>"Create account"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+ActiveRecord::SubclassNotFound (Invalid single-table inheritance type: true is not a subclass of User):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (84.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (97.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.7ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 20:56:05 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/estatesale.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:56:05 -0700
+
+
+Started GET "/assets/favorites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:56:05 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-19 20:56:05 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:56:05 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 20:56:05 -0700
+
+
+Started GET "/assets/application.self-ccf0c89a19c7a37e56567be63a8a956a5750fe092d482d1d307bf6efb8320b5e.css?body=1" for ::1 at 2015-08-19 20:56:05 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-19 20:56:05 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-19 20:56:05 -0700
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:56:05 -0700
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:56:05 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:56:05 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 20:56:05 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-19 20:56:05 -0700
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 20:56:05 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (108.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (123.5ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 20:58:37 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/marisaramon/Desktop/phase-3/Rails-Passion-Project/app/views/users/new.html.erb:51: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/marisaramon/Desktop/phase-3/Rails-Passion-Project/app/views/users/new.html.erb:57: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/marisaramon/Desktop/phase-3/Rails-Passion-Project/app/views/users/new.html.erb:59: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/users/new.html.erb:51: syntax error, unexpected keyword_end, expecting ')'
+  app/views/users/new.html.erb:57: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/users/new.html.erb:59: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.8ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 20:58:49 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/marisaramon/Desktop/phase-3/Rails-Passion-Project/app/views/users/new.html.erb:50: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/marisaramon/Desktop/phase-3/Rails-Passion-Project/app/views/users/new.html.erb:56: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/marisaramon/Desktop/phase-3/Rails-Passion-Project/app/views/users/new.html.erb:58: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/users/new.html.erb:50: syntax error, unexpected keyword_end, expecting ')'
+  app/views/users/new.html.erb:56: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/users/new.html.erb:58: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.4ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 21:01:11 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (2 for 3..4)):
+    21:     <%= radio_button_tag(:type, "Shopper") %>
+    22:     <%= label_tag(:type_shopper, "Shopper") %>
+    23:     <%= radio_button_tag(:type, "Lister") %>
+    24:     <%= radio_button(:type_lister, "Lister") %>
+    25: 
+    26: </p>
+    27: 
+  app/views/users/new.html.erb:24:in `block in _app_views_users_new_html_erb__2020661845405820430_70222964873040'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__2020661845405820430_70222964873040'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (93.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (106.8ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 21:01:43 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (1 for 3..4)):
+    21:     <%= radio_button_tag(:type, "Shopper") %>
+    22:     <%= label_tag(:type_shopper, "Shopper") %>
+    23:     <%= radio_button_tag(:type, "Lister") %>
+    24:     <%= radio_button(:type_lister) %>
+    25: 
+    26: </p>
+    27: 
+  app/views/users/new.html.erb:24:in `block in _app_views_users_new_html_erb__2020661845405820430_70222994896360'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__2020661845405820430_70222994896360'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 21:01:57 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (2 for 3..4)):
+    21:     <%= radio_button_tag(:type, "Shopper") %>
+    22:     <%= label_tag(:type_shopper, "Shopper") %>
+    23:     <%= radio_button_tag(:type, "Lister") %>
+    24:     <%= radio_button(:type_lister, "Lister") %>
+    25: 
+    26: </p>
+    27: 
+  app/views/users/new.html.erb:24:in `block in _app_views_users_new_html_erb__2020661845405820430_70222965130180'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__2020661845405820430_70222965130180'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.3ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 21:02:13 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (2 for 3..4)):
+    21:     <%= radio_button_tag(:type, "Shopper") %>
+    22:     <%= label_tag(:type_shopper, "Shopper") %>
+    23:     <%= radio_button_tag(:type, "Lister") %>
+    24:     <%= radio_button(:type_lister, "I am a Lister") %>
+    25: 
+    26: </p>
+    27: 
+  app/views/users/new.html.erb:24:in `block in _app_views_users_new_html_erb__2020661845405820430_70223010005080'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__2020661845405820430_70223010005080'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 21:02:20 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (2 for 3..4)):
+    21:     <%= radio_button_tag(:type, "Shopper") %>
+    22:     <%= label_tag(:type_shopper, "Shopper") %>
+    23:     <%= radio_button_tag(:type, "Lister") %>
+    24:     <%= radio_button(:type_lister, "Lister") %>
+    25: 
+    26: </p>
+    27: 
+  app/views/users/new.html.erb:24:in `block in _app_views_users_new_html_erb__2020661845405820430_70222985906380'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__2020661845405820430_70222985906380'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.5ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 21:05:11 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    16: 
+    17:  <!--  RADIO BUTTONS? -->
+    18: <p>
+    19:    <%= select(:user, :type) %>
+    20: </p>
+    21: 
+    22: 
+  app/views/users/new.html.erb:19:in `block in _app_views_users_new_html_erb__2020661845405820430_70222987497120'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__2020661845405820430_70222987497120'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.3ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 21:05:22 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (1 for 2..5)):
+    16: 
+    17:  <!--  RADIO BUTTONS? -->
+    18: <p>
+    19:    <%= select(:type) %>
+    20: </p>
+    21: 
+    22: 
+  app/views/users/new.html.erb:19:in `block in _app_views_users_new_html_erb__2020661845405820430_70223013815400'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__2020661845405820430_70223013815400'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (25.4ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 21:05:46 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (86.2ms)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    16: 
+    17:  <!--  RADIO BUTTONS? -->
+    18: <p>
+    19:    <%= f.select(:type) %>
+    20: </p>
+    21: 
+    22: 
+  app/views/users/new.html.erb:19:in `block in _app_views_users_new_html_erb__2020661845405820430_70223016933780'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__2020661845405820430_70223016933780'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (86.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (100.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.7ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 21:06:15 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/favorites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 21:06:15 -0700
+
+
+Started GET "/assets/estatesale.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 21:06:15 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 21:06:15 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 21:06:15 -0700
+
+
+Started GET "/assets/application.self-ccf0c89a19c7a37e56567be63a8a956a5750fe092d482d1d307bf6efb8320b5e.css?body=1" for ::1 at 2015-08-19 21:06:15 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-19 21:06:15 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-19 21:06:15 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-19 21:06:15 -0700
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 21:06:15 -0700
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 21:06:15 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 21:06:15 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 21:06:15 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-19 21:06:15 -0700
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 21:06:15 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (103.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (121.2ms)
+
+
+Started POST "/users" for ::1 at 2015-08-19 21:07:02 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z4GQrDx/+zU33pWObqDpABdrAT+BDTjUaTPyh4twtUpsfGF/tm9WeZV+1rDmxbhFeN1Ob7XevHsz0TGYunGiww==", "user"=>{"username"=>"fred", "password"=>"[FILTERED]", "email"=>"fred@fred.com", "type"=>"Lister", "company_name"=>"fred's company", "owner_name"=>"fred jones", "company_url"=>"http://www.fred.com", "phone_number"=>"214-000-0000"}, "commit"=>"Create account"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["type", "Lister"], ["username", "fred"], ["password_digest", "$2a$10$pA3R3IJQYJNysSMmOzm9M.PdUUdq9Btj430U.v0i40pCT9mxcgf7q"], ["email", "fred@fred.com"], ["company_name", "fred's company"], ["owner_name", "fred jones"], ["company_url", "http://www.fred.com"], ["phone_number", "214-000-0000"], ["created_at", "2015-08-20 04:07:02.170540"], ["updated_at", "2015-08-20 04:07:02.170540"]]
+  [1m[35m (87.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/estatesales
+Completed 302 Found in 176ms (ActiveRecord: 87.7ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-08-19 21:07:02 -0700
+Processing by EstatesalesController#index as HTML
+  [1m[36mEstatesale Load (0.3ms)[0m  [1mSELECT "estatesales".* FROM "estatesales"[0m
+  Rendered estatesales/index.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 21:07:02 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (32.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.2ms)
+
+
+Started DELETE "/logout" for ::1 at 2015-08-19 21:07:16 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NjckqGTWg/ClkIcpQIjImnRacdim25WezuSzMF79T8U9ytV77sYuvAcwxBfI7ZnfG+w+iJIIETGUBnAvb/xYTA=="}
+Redirected to http://localhost:3000/estatesales
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-08-19 21:07:16 -0700
+Processing by EstatesalesController#index as HTML
+  [1m[36mEstatesale Load (0.3ms)[0m  [1mSELECT "estatesales".* FROM "estatesales"[0m
+  Rendered estatesales/index.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 123ms (Views: 121.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 21:07:17 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (36.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (34.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/users/new" for ::1 at 2015-08-19 21:13:13 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 42ms (Views: 40.8ms | ActiveRecord: 0.3ms)
+  [1m[36m (14.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEstatesales (20150818184303)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (15.6ms)[0m  [1mCREATE TABLE "estatesales" ("id" serial primary key, "title" character varying, "address" character varying, "city" character varying, "state" character varying, "zip_code" integer, "start_date" character varying, "end_date" character varying, "times" character varying, "description" character varying, "forms_of_payment" character varying, "special_inst" character varying, "img_url" character varying, "lister_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (5.7ms)[0m  CREATE  INDEX  "index_estatesales_on_lister_id" ON "estatesales"  ("lister_id")
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150818184303"]]
+  [1m[35m (6.4ms)[0m  COMMIT
+Migrating to CreateUsers (20150818192458)
+  [1m[36m (5.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (8.6ms)[0m  CREATE TABLE "users" ("id" serial primary key, "type" character varying, "username" character varying, "password_digest" character varying, "email" character varying, "company_name" character varying, "owner_name" character varying, "company_url" character varying, "phone_number" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150818192458"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Migrating to CreateFavorites (20150818193456)
+  [1m[36m (6.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (14.9ms)[0m  CREATE TABLE "favorites" ("id" serial primary key, "notes" character varying, "shopper_id" integer, "estatesale_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX  "index_favorites_on_shopper_id" ON "favorites"  ("shopper_id")[0m
+  [1m[35m (1.0ms)[0m  CREATE  INDEX  "index_favorites_on_estatesale_id" ON "favorites"  ("estatesale_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150818193456"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'estatesales'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'favorites'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["type", "Shopper"], ["username", "Bertha"], ["password_digest", "$2a$10$TnRk//HZfJbgXOdnCbTxweatueOM3DQbxAcPXNotIdETWESSB/g8q"], ["email", "cruz_gutkowski@ratke.name"], ["company_name", "Koch, Stark and Casper"], ["owner_name", "Dr. Daniela Johnston"], ["company_url", "http://buckridge.biz/bryce.cremin"], ["phone_number", "(869) 040-6377 x1654"], ["created_at", "2015-08-20 04:16:11.545443"], ["updated_at", "2015-08-20 04:16:11.545443"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["type", "Shopper"], ["username", "Marcelo"], ["password_digest", "$2a$10$bMX044YTXUk5Vht7CmsyRuORcppIV6PVg4RaXHEs1ynzfxgsCIpeS"], ["email", "emiliano_jenkins@moriette.org"], ["company_name", "Torp and Sons"], ["owner_name", "Mrs. Oda Toy"], ["company_url", "http://cain.info/lola"], ["phone_number", "943.961.1564 x47422"], ["created_at", "2015-08-20 04:16:11.629805"], ["updated_at", "2015-08-20 04:16:11.629805"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["type", "Shopper"], ["username", "Calista"], ["password_digest", "$2a$10$77nOpyMkNeuwxhiU3c/qzO3tp0./LCvRifv6.fHsmQjIDv4VnkSWe"], ["email", "monserrate_rempel@crist.info"], ["company_name", "Oberbrunner, O'Kon and King"], ["owner_name", "Deron Hoppe"], ["company_url", "http://hodkiewicz.org/floyd"], ["phone_number", "762.196.3164"], ["created_at", "2015-08-20 04:16:11.707690"], ["updated_at", "2015-08-20 04:16:11.707690"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["type", "Shopper"], ["username", "Vita"], ["password_digest", "$2a$10$l5VQ6I9CJ3TBDTXzvBnmAeIt21yK9xKskHvjyAEmUeYhM44/fFO.a"], ["email", "judge.wuckert@vonmorar.name"], ["company_name", "Pacocha-Bauch"], ["owner_name", "Annabelle Bins II"], ["company_url", "http://ruel.org/donald"], ["phone_number", "(800) 484-2353"], ["created_at", "2015-08-20 04:16:11.783400"], ["updated_at", "2015-08-20 04:16:11.783400"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["type", "Shopper"], ["username", "Bette"], ["password_digest", "$2a$10$GYqonRJ1Rp6Zzz18Hro3sOQBvQBULsZObzPaQ4J87RcR5FUrxvlVu"], ["email", "elenora.tremblay@thompson.net"], ["company_name", "Mills, Runte and Hermiston"], ["owner_name", "Lorena Hickle DVM"], ["company_url", "http://lemkeoberbrunner.com/regan_howe"], ["phone_number", "804.175.3072 x063"], ["created_at", "2015-08-20 04:16:11.860622"], ["updated_at", "2015-08-20 04:16:11.860622"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["type", "Lister"], ["username", "Arielle"], ["password_digest", "$2a$10$GHRUQKzSa8Ii807LezQWYugyuirDWpDq6tMSc8nU6dMWomrPG9eCG"], ["email", "fabian_hahn@johnston.net"], ["company_name", "Klein LLC"], ["owner_name", "Mrs. Angelita Nicolas"], ["company_url", "http://davisnienow.name/makayla"], ["phone_number", "(515) 528-7907 x8312"], ["created_at", "2015-08-20 04:16:11.943484"], ["updated_at", "2015-08-20 04:16:11.943484"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["type", "Lister"], ["username", "Krystel"], ["password_digest", "$2a$10$xHwx3ORzB5sqx7WXUvHxgOIKWLRpIgmaoLh8aRVAL04eS6kvUa1Zu"], ["email", "madonna_schroeder@bayerstanton.name"], ["company_name", "Bauch-Legros"], ["owner_name", "Laurianne Koch"], ["company_url", "http://lowe.info/tomas.borer"], ["phone_number", "1-141-404-0449"], ["created_at", "2015-08-20 04:16:12.059997"], ["updated_at", "2015-08-20 04:16:12.059997"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["type", "Lister"], ["username", "Gerhard"], ["password_digest", "$2a$10$GiI3jfgTknGWY1rV6on5Y.3wD8EqRZkNrb4IJPauW98jwnItD81nq"], ["email", "mitchell_armstrong@trompledner.com"], ["company_name", "Nader-Veum"], ["owner_name", "Riley Cormier"], ["company_url", "http://schaefer.info/malika.jerde"], ["phone_number", "(166) 410-9557 x10857"], ["created_at", "2015-08-20 04:16:12.135035"], ["updated_at", "2015-08-20 04:16:12.135035"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["type", "Lister"], ["username", "Gay"], ["password_digest", "$2a$10$Kwrvx7Bzdv6kHn7e8JL82u4mJVWKlcYzED7RMSd8arZ3CD2tPww1e"], ["email", "leila@gaylord.name"], ["company_name", "Kub-Kessler"], ["owner_name", "Macie Dach"], ["company_url", "http://windler.biz/kendra"], ["phone_number", "877.457.5185"], ["created_at", "2015-08-20 04:16:12.207571"], ["updated_at", "2015-08-20 04:16:12.207571"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["type", "Lister"], ["username", "Wava"], ["password_digest", "$2a$10$F1Hn9N7.8fwyrwWYKGRbUOnBc3E.vnH9J7sBE.UUD7njOhGGy9rQC"], ["email", "jaida@hartmann.com"], ["company_name", "Schaden LLC"], ["owner_name", "Miss Ariane Lind"], ["company_url", "http://herzog.org/rhea"], ["phone_number", "1-833-750-6385"], ["created_at", "2015-08-20 04:16:12.288171"], ["updated_at", "2015-08-20 04:16:12.288171"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "estatesales" ("title", "address", "city", "state", "zip_code", "start_date", "end_date", "times", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "The Jewel Box"], ["address", "7424 Meadow Oaks Drive"], ["city", "Dallas"], ["state", "TX"], ["zip_code", 75230], ["start_date", "Saturday, August 15"], ["end_date", "Sunday, August 16"], ["times", "10:00 am until 4:00 pm"], ["description", "Such a lovely home filled with fine furnishings ... you’ll want to shop just because!  Of course Rusty worked his special magic to make the home a showplace with leather seating ... a burl cylinder desk that Fred and I would love to own ... and elegant lighting, mirrors, and rugs!  Ladies will be standing in line just to checkout the clothing ... designer handbags ... and racks covered in furs.  Regardless of our age, we all love designer pieces ... especially purses and shoes.  As soon as we have Rusty’s list we will add it to what we already fell in love with like the ...\n\nFurniture ... a leather sofa, a wingback leather chair with matching ottoman, large rectangular coffee table, a pair of upholstered arm chairs, lamp tables, antique wash stands, a writing desk, sofa table, a burl cylinder desk (my favorite piece in the whole sale), a game table, a child’s 4-poster canopy bed, a breakfast table with 2 chairs, marble top lamp table, 4-poster bed, a French style table with ormolu, dining table with 8 chairs, a drop front desk, a beautiful glass display case, a buffet, a daybed, knee hole desk, ladies’ writing desk.\n\nCollectibles ... Herend fishnet bunnies, puppets, hundreds of designer purses (St. John, Coach, Carlos Falchi), a wonderful selection of fur coats, dolls (some antique), Oriental kimonos, Stangle pottery (dinnerware), vintage patterns, vintage board games, framed Audubon bird prints, crystal (including stems), a collection bookends, coffee table books, sconces, silverplate.\n\nLighting (including crystal table lamps) ~ Mirrors ~ Several Rugs\n\nA Full Kitchen"], ["created_at", "2015-08-20 04:16:12.306497"], ["updated_at", "2015-08-20 04:16:12.306497"]]
+  [1m[35m (5.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.9ms)[0m  INSERT INTO "estatesales" ("title", "address", "city", "state", "zip_code", "start_date", "end_date", "times", "description", "forms_of_payment", "special_inst", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["title", "Help Me Rhonda"], ["address", "3101 Prestonwood Drive"], ["city", "Plano"], ["state", "TX"], ["zip_code", 75093], ["start_date", "Friday, August 14"], ["end_date", "Sunday, August 16"], ["times", "10:00 am until 5:00 pm"], ["description", "DRAMATIC ... every room is a standout with plush sofas accented with fringe ... a velvety red throne chair fit for The Queen ... banquet size glass top dining table that seats 8 guests comfortably ... and decorative accents that finish off each room to perfection!  We’re certain you’ll love the cupid statuary ... the decorative pillows ... crystal lamps ... and large urns and vases filled with faux flowers that add color and interest throughout the house.  There’s even doggie beds coordinated with different living areas.  If you’re wanting to create more excitement and interest in your home furnishings ... Help Me Ronda is the place to start your shopping weekend.  Begin with ...\n\nFurniture ... banquet size glass top dining table with 8 upholstered chairs, a matching mirrored server, a breakfast table (elegantly styled) with upholstered chairs, 2 ornate fringed sofas in chocolate brown, glass top coffee table, bar stools, queen size bed with velvet padded headboard, marble top Bombay chest, king size 4-poster canopy bed (with elegant bedding), 2-drawer ornate night stand, round ornate night stand, a custom upholstered love seat with scalloped bottom edges, an accent chair with matching ottoman, ornately carved pillared armoire.\n\nCollectibles ... costume jewelry, women’s fashion watches, sconces, fine ladies’ clothing and accessories, decoratives, large urns and vases filled with faux flowers, ornate candle holders, a large ornately carved standing cross.\n\nRugs ~ Ornate Mirrors (including a Venetian mirror) ~ Lighting ~ Framed Art\n\nMiscellaneous ... aluminum ladder, Rubber storage cabinets (in the garage), a flat screen TV, electronics, doggie beds, luggage, GREAT PATIO FURNITURE (just as elegant as the furnishings inside the house), a chimenea with dragonfly pattern.\n\nYou won’t see another sale like this one ... this weekend or next!\n\n"], ["forms_of_payment", "Cash, Checks (with proper ID), Credit Cards"], ["special_inst", "No Children"], ["created_at", "2015-08-20 04:16:12.315252"], ["updated_at", "2015-08-20 04:16:12.315252"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "estatesales" ("title", "address", "city", "state", "zip_code", "start_date", "end_date", "times", "description", "forms_of_payment", "special_inst", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "C2 Estate Sales"], ["address", "6547 Sondra Drive"], ["city", "Plano"], ["state", "TX"], ["zip_code", 75214], ["start_date", "Friday, August 14"], ["end_date", "Sunday, August 16"], ["times", "10:00 am until 5:00 pm"], ["description", "It’s the details that set a beautifully decorated home into a simply gorgeous one.  And that’s exactly what Charm has on Sondra Drive.  The subtle swirl pattern on the theater sofas elevates them to STAR status along with the single pedestal custom dining table by Jonathan Charles.  I can’t take my eyes off the stylish queen size bed with the royal looking headboard and elegant night stands.  Then there are equally detailed smalls like the multi-colored decorative pottery with etched patterns ... crystal stems ... and white cookware with gold trim.  Charms’ sales are always beautiful, but this one rises to a whole different level.  Begin your shopping experience with ...\n\nFurniture ... several chairs from Robb & Stucky, custom made dining table and kidney shaped ladies’s writing desk by Jonathan Charles, an antique French ormolu accented writing desk, an antique French sideboard, custom made upholstered sofas (perfect addition for a theater room), a pair of antique English night stands, Victorian parlor tables, a leather sofa with matching chair and ottoman, glass coffee table and matching lamp tables, an elegantly designed queen bed with two matching night stands, an antique rotating bookcase, an animal print arm chair (matched with the ladies writing desk), painted TV armoire,\n\nCollectibles ... costume jewelry, crystal stems, stained glass windows, decorative copper, a pair of lion statues, crystal lamps and Tiffany style floor lamp, decorative pottery, Blue Willow platter,\n\nRugs ~ Mirrors ~ Lighting ~ Decorator Art beautifully framed.\n\nFull Kitchen including a Kitchen Aid Mixer.\n\nMiscellaneous ... women’s clothing (small size), men’s designer ties by Ferragamo, shoes (size 9.5) by Allen Edmond, custom made men’s dress shirts, Christmas decorations, ladies’ clothing (including a wedding gown)."], ["forms_of_payment", "Cash only"], ["special_inst", "No Children"], ["created_at", "2015-08-20 04:16:12.324304"], ["updated_at", "2015-08-20 04:16:12.324304"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "estatesales" ("title", "address", "city", "state", "zip_code", "start_date", "end_date", "times", "description", "forms_of_payment", "special_inst", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["title", "A Family Estate Sale"], ["address", "6625 Walnut Hill Lane"], ["city", "Dallas"], ["state", "TX"], ["zip_code", 75230], ["start_date", "Friday, August 14"], ["end_date", "Sunday, August 16"], ["times", "10:00 am until 4:00 pm"], ["description", "A fabulous sale requiring a unique approach from Anita and Sue.  First, it starts off as a “By Appointment Only” sale on Wednesday and Thursday.  The homeowner was a clothes horse who filled her home with designer clothing, shoes, purses, belts, furs, hats – everything necessary to put her best professional foot forward.  Her clothing ranges from size 2~6; shoe size 5 ½ ~ 6.  In order for shoppers to have the time (and space) to try things on, Anita and Sue will limit the number of people inside the home the first two days.  Then starting Friday, the sale will be open to the public ... no appointment necessary.  Ladies, you won’t be able to resist designer clothing from Escada, Armani, Vera Wang, BCBGMAXAZRIA, and others; designer purses by Fendi, Michael Kors, or purses made from exotic skins like alligator; shoes and boots (from ankle to knee) by Gucci, Prada, Bruno Magli, Jimmy Choo, Manolo Blahnik, Stuart Weitzman, and others; and gorgeous fur coats and fur trimmed sweaters.  Even the belts are designer ... Escada and Nancy Gonzalez.  It’s a boutique estate sale from start to finish."], ["forms_of_payment", "Cash & Checks (with 2 forms of ID)"], ["special_inst", "Bring Help to Load; No Children"], ["img_url", "http://www.24-7estatesales.com/plugins/content/jw_sigpro/sigpro.transparent.gif"], ["created_at", "2015-08-20 04:16:12.327186"], ["updated_at", "2015-08-20 04:16:12.327186"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/estatesales" for ::1 at 2015-08-19 21:16:34 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EstatesalesController#index as HTML
+  [1m[35mEstatesale Load (0.6ms)[0m  SELECT "estatesales".* FROM "estatesales"
+  Rendered estatesales/index.html.erb within layouts/application (17.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 456ms (Views: 434.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/estatesale.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 21:16:35 -0700
+
+
+Started GET "/assets/favorites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 21:16:35 -0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 21:16:35 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-19 21:16:35 -0700
+
+
+Started GET "/assets/application.self-ccf0c89a19c7a37e56567be63a8a956a5750fe092d482d1d307bf6efb8320b5e.css?body=1" for ::1 at 2015-08-19 21:16:35 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-19 21:16:35 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-19 21:16:35 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-19 21:16:35 -0700
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 21:16:35 -0700
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 21:16:35 -0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 21:16:35 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-19 21:16:35 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-19 21:16:35 -0700
+
+
+Started GET "/assets/MyriadPro.otf" for ::1 at 2015-08-19 21:16:35 -0700
+
+ActionController::RoutingError (No route matches [GET] "/assets/MyriadPro.otf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/marisaramon/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (113.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (35.6ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-08-19 21:16:40 -0700
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEstatesale Load (0.3ms)[0m  [1mSELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 45ms (Views: 38.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/estatesales/1/edit" for ::1 at 2015-08-19 21:16:48 -0700
+Processing by EstatesalesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.3ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered estatesales/edit.html.erb within layouts/application (350.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 445ms (Views: 443.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-08-19 21:16:52 -0700
+Processing by EstatesalesController#index as HTML
+  [1m[36mEstatesale Load (0.3ms)[0m  [1mSELECT "estatesales".* FROM "estatesales"[0m
+  Rendered estatesales/index.html.erb within layouts/application (2.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-08-19 21:17:04 -0700
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.3ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 41ms (Views: 38.8ms | ActiveRecord: 0.6ms)
