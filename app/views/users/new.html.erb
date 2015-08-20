@@ -1,0 +1,45 @@
+<h3>Sign Up</h3>
+
+<%= form_for(@user) do |f| %>
+<p>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+</p>
+<p>
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+</p>
+<p>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+</p>
+
+<p>
+ <!--  RADIO BUTTONS? -->
+
+
+<p>
+  <%= f.label :company_name %>
+  <%= f.text_field :company_name %>
+</p>
+<p>
+  <%= f.label :owner_name %>
+  <%= f.text_field :owner_name %>
+</p>
+<p>
+ <!--  Make url_field? -->
+  <%= f.label :company_website %>
+  <%= f.url_field :company_url %>
+</p>
+<p>
+  <%= f.label :phone_number %>
+  <%= f.telephone_field :phone_number %>
+</p>
+<p>
+  <%= f.submit "Create account" %>
+</p>
+<% end %>
+
+<p>Already Registered?  <%= link_to "Log in!", login_path %></p>
+
+<%= link_to 'Back', estatesales_path %>

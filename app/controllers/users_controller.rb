@@ -1,13 +1,20 @@
 class UsersController < ApplicationController
 
-
+   #Sign Up New Users
   def new
+    @user = User.new
   end
 
   def create
-    @user = User.new()
-  end
+    @user = User.new(user_params)
 
+    if @user.save
+      session[:id] = @user.id
+      redirect_to estatesales_path
+    else
+      render 'new'
+    end
+  end
 
   private
     def user_params
