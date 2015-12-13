@@ -1,27 +1,29 @@
 class FavoritesController < ApplicationController
 
-  # def index
-  #   if logged_in?
-  #     @favorites = current_user.favorites.all
-  #   end
-  # end
+  def index
+      @favorites = current_user.favorites
+  end
 
   def show
-    if logged_in?
-      @favorites = current_user.favorites
-      redirect_to user_favorite_path
-    end
+
   end
 
   def create
+      @sale = Estatesale.find(params[:id])
       @favorites = current_user.favorites.new(estatesale_params)
 
-      if @favorites.save
-        redirect_to @favorites
-      else
-        redirect_to user_favorite_path(current_user)
+      respond_to do |format|
+        if @favorites.save
+          format.html { redirect_to user_favorite_path(current_user)}
+          format.js
+          format.json { render action: 'show', status: :created, location: @favorites}
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @favorites.errors,
+          status: :unprocessable_entity}
+        end
       end
-  end
+    end
 
   # def destroy
   #   @favorite = Favorite.find(params[:id])

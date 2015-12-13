@@ -1,4 +1,8 @@
 class Estatesale < ActiveRecord::Base
+  validates :title, :description, :start_date, :end_date, :times, presence: true
+  validates :title, uniqueness: true
+
+
   belongs_to :lister
   #added:
   has_many :favorites

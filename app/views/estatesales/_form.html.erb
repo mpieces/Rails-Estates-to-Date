@@ -1,3 +1,5 @@
+<!-- New sale listing form:  -->
+
 <div class="sale-form">
   <%= form_for @sale do |f| %>
   <p>
@@ -40,7 +42,7 @@
 
   <p>
       <%= f.label :description %>
-      <%= f.text_area :description %>
+      <%= f.text_area :description, rows: 20 %>
   </p>
   <p>
       <%= f.label :forms_of_payment %>
@@ -54,11 +56,10 @@
       <%= f.label :img_url %>
       <%= f.text_field :img_url %>
   </p>
-
-  <br>
-  <br>
-  <p><%= f.submit %></p>
+  <p>
+   <!--  Change button text here -->
+    <%= f.submit %></p>
   <% end %>
-
+  <br>
   <%= link_to 'Back', estatesales_path %>
 </div>

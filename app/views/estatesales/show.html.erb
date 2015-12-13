@@ -6,17 +6,11 @@
       <!-- Add sale to favorites -->
 
 
-    <% if logged_in? %>
-      <div id="star-container">
-        <%= link_to 'Add Sale to Favorites', @favorites, remote: true %>
 
-        <i id="empty" class="icon icon-star-o icon-2x"></i></a>
-        <i id="filled" class="icon icon-star icon-3x"></i>
-       <!--  <br>
-        <br>
+<!--
         <a id="see-favorites" href="/favorites">See All Favorites</a> -->
-      </div>
-    <% end %>
+
+
 
       <!--  div id = star container -->
       <!--  div id = favorites container  -->
@@ -56,7 +50,7 @@
 
     <!-- Delete listing button:  -->
       <h3>
-        <%= link_to 'Delete Listing', estatesales_path(@sale), method: :delete %>
+        <%= link_to 'Delete', @sale, method: :delete, data: { confirm: 'Are you sure?' } %>
       </h3>
     </div>
   </div>
