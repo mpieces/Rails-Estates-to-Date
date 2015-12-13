@@ -18,24 +18,31 @@
         <a href='/'><img id="head" src="http://i.imgur.com/9bv5xg0.png" alt="header-image"/>
       </div>
       <div class="logo">
-        <img id="logo" src="http://i.imgur.com/L1TLcz9.png"></a>
+        <!-- <img id="logo" src="http://i.imgur.com/L1TLcz9.png"></a> -->
+        <%= image_tag("logo_1.png", alt: "title image", :id => "logo") %>
       </div>
+
 
       <div class="nav">
         <%= link_to 'Estate Sales', estatesales_path %>
+
         <!-- Need to change these: -->
-        <!-- <a href="#">Auctions</a> -->
-        <!-- <a href="#">Around Town</a> -->
-        <!-- <a href="/companies">Companies</a> -->
+        <a href="#">Auctions</a>
+        <!-- <a href="#">Out & About</a> -->
+        <a href="#">Companies</a>
+
         <% if !logged_in? %>
-        <%= link_to 'Sign Up', new_user_path %>
-        <%= link_to 'Log In', login_path %>
+          <%= link_to 'Sign Up', new_user_path %>
+          <%= link_to 'Log In', login_path %>
         <% end %>
         <%  if logged_in? %>
           <%= link_to 'Log Out', logout_path, method: :delete %>
         <% end %>
+
         <%= link_to 'Advertise', new_estatesale_path %>
-       <!--   <a href="#">Contact</a> -->
+
+       <!--  Add this later: -->
+       <!--   <a href="#">Contact Us</a> -->
 
       </div>
 

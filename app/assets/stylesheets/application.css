@@ -222,9 +222,8 @@ body {
 .nav {
 /*  background:#D2EDEB;*/
   height:37px;
-  /*Added:*/
   z-index: 10;
-  margin-top: -35px;
+  margin-top: -10px;
   text-align: center;
   /*padding-top: 37px;
   padding-left: 30px;*/
