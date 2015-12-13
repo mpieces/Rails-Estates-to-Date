@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'estatesales#index'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
   # get '/' do
     #redirect to '/index'
   #end
-  root 'estatesale#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

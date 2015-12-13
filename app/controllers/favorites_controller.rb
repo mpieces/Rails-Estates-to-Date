@@ -1,33 +1,35 @@
 class FavoritesController < ApplicationController
-  def index
 
-  end
+  # def index
+  #   @favorites = current_user.favorites
+  # end
 
-  def show  # change to current_user.favorites
-    @favorite = Favorite.find(params[:id])
-  end
+  # def show
+  #   # @user = current_user.find_by(id: params[:user_id])
 
-  def create
-      @user = current_user
-      @favorites = @user.favorites.new(estatesale_params)
+  #   @favorites = current_user.favorites
+  # end
 
-      if @favorites.save
-        redirect_to @favorites
-      else
-        redirect_to estatesales_path
-      end
-  end
+  # def create
+  #     @favorites = current_user.favorites.new(estatesale_params)
 
-  def destroy
-    @favorite = Favorite.find(params[:id])
-    @favorite.destroy
+  #     if @favorites.save
+  #       redirect_to @favorites
+  #     else
+  #       redirect_to user_favorite_url(current_user)
+  #     end
+  # end
 
-    redirect_to user_favorites_path
-  end
+  # def destroy
+  #   @favorite = Favorite.find(params[:id])
+  #   @favorite.destroy
 
-   private
-    def estatesale_params
-      params.require(:estatesale).permit(:title, :address, :city, :state, :zip_code, :start_date, :end_date, :times, :description, :forms_of_payment, :special_inst, :img_url)
-    end
+  #   redirect_to user_favorites_path
+  # end
+
+  #  private
+  #   def estatesale_params
+  #     params.require(:estatesale).permit(:title, :address, :city, :state, :zip_code, :start_date, :end_date, :times, :description, :forms_of_payment, :special_inst, :img_url)
+  #   end
 
 end
