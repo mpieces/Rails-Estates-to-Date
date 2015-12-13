@@ -1,5 +1,5 @@
 class Estatesale < ActiveRecord::Base
-  validates :title, :description, :start_date, :end_date, :times, presence: true
+  validates :title, :city, :zip_code, :description, :start_date, :end_date, :times, presence: true
   validates :title, uniqueness: true
 
 

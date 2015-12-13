@@ -22980,3 +22980,306 @@ Processing by EstatesalesController#create as HTML
   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
   [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
 Completed 200 OK in 145ms (Views: 111.2ms | ActiveRecord: 19.5ms)
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 15:05:59 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TlW2STdne5BbAZzTV47/Q+RTTuqohU6DqtsNrRkLk3E/wEDmi25YjtMt0hR7Kd8JLptf1ElHqXmvL3Wtgi2V6Q==", "estatesale"=>{"title"=>"", "address"=>"2343 a;slkdjasf", "city"=>"dasldkj", "state"=>"tx", "zip_code"=>"", "start_date"=>"", "end_date"=>"", "times"=>"", "description"=>"", "forms_of_payment"=>"", "special_inst"=>"", "img_url"=>""}, "commit"=>"Create Estatesale"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mEstatesale Exists (0.3ms)[0m  SELECT  1 AS one FROM "estatesales" WHERE "estatesales"."title" = '' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered estatesales/new.html.erb within layouts/application (5.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 42ms (Views: 35.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-12-13 15:05:59 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 15:05:59 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 15:05:59 -0600
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 15:05:59 -0600
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 15:05:59 -0600
+
+
+Started GET "/assets/application.self-36a72a8a6c0bdfeb84b3d58cbdaa9d00b12b9c7f8d939f2fa797ac429e5764f9.css?body=1" for ::1 at 2015-12-13 15:05:59 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-12-13 15:05:59 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-13 15:05:59 -0600
+
+
+Started GET "/assets/application.self-628bbc78f1006b830cd306762aa8b8112ebde69c167cfacf24c035c50e263a71.js?body=1" for ::1 at 2015-12-13 15:05:59 -0600
+
+
+Started GET "/assets/logo-73b920b7606c5c415471cad291661ec5c7459e97f3c1bd9ca8b6f9571e2d0dba.png" for ::1 at 2015-12-13 15:05:59 -0600
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 15:06:02 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pCmCr/A3LMhusD3gH4to4HUGvuZKtJTUey2Jru6NA8HVvHQATD4P1uaccyczLEiqv86v2Kt2cy5+2fGudasFWQ==", "estatesale"=>{"title"=>"", "address"=>"2343 a;slkdjasf", "city"=>"dasldkj", "state"=>"tx", "zip_code"=>"", "start_date"=>"", "end_date"=>"", "times"=>"", "description"=>"", "forms_of_payment"=>"", "special_inst"=>"", "img_url"=>""}, "commit"=>"Create Estatesale"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEstatesale Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "estatesales" WHERE "estatesales"."title" = '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  Rendered estatesales/new.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 42ms (Views: 35.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 15:06:17 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"obvoEqaa3EcRXLo4HP/IPCWekFLlBWkRE/y3MlMV/57QLh69GpP/WZlw9P8wWOh271aBbATHjusWCM8yyDP5Bg==", "estatesale"=>{"title"=>"", "address"=>"2343 a;slkdjasf", "city"=>"dasldkj", "state"=>"tx", "zip_code"=>"", "start_date"=>"", "end_date"=>"", "times"=>"9-5", "description"=>"blahblahblah", "forms_of_payment"=>"", "special_inst"=>"", "img_url"=>""}, "commit"=>"Create Estatesale"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mEstatesale Exists (0.2ms)[0m  SELECT  1 AS one FROM "estatesales" WHERE "estatesales"."title" = '' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered estatesales/new.html.erb within layouts/application (6.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 47ms (Views: 42.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 15:06:46 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p9/QJQOznu1oMqQmwCnluG5HK5WEzeixPeSyTMKDhJ7WSiaKv7q98+Ae6uHsjsXypI86q2UPD0s4EMpMWaWCBg==", "estatesale"=>{"title"=>"", "address"=>"2343 a;slkdjasf", "city"=>"dasldkj", "state"=>"tx", "zip_code"=>"", "start_date"=>"", "end_date"=>"", "times"=>"9-5", "description"=>"blahblahblah", "forms_of_payment"=>"", "special_inst"=>"", "img_url"=>""}, "commit"=>"Create Estatesale"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEstatesale Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "estatesales" WHERE "estatesales"."title" = '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  Rendered estatesales/new.html.erb within layouts/application (80.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 115ms (Views: 110.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 15:08:54 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p9/QJQOznu1oMqQmwCnluG5HK5WEzeixPeSyTMKDhJ7WSiaKv7q98+Ae6uHsjsXypI86q2UPD0s4EMpMWaWCBg==", "estatesale"=>{"title"=>"", "address"=>"2343 a;slkdjasf", "city"=>"dasldkj", "state"=>"tx", "zip_code"=>"", "start_date"=>"", "end_date"=>"", "times"=>"9-5", "description"=>"blahblahblah", "forms_of_payment"=>"", "special_inst"=>"", "img_url"=>""}, "commit"=>"Create Estatesale"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mEstatesale Exists (0.2ms)[0m  SELECT  1 AS one FROM "estatesales" WHERE "estatesales"."title" = '' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered estatesales/new.html.erb within layouts/application (5.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 46ms (Views: 40.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-12-13 15:08:54 -0600
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 15:08:54 -0600
+
+
+Started GET "/assets/application.self-36a72a8a6c0bdfeb84b3d58cbdaa9d00b12b9c7f8d939f2fa797ac429e5764f9.css?body=1" for ::1 at 2015-12-13 15:08:54 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 15:08:54 -0600
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 15:08:54 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 15:08:54 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-12-13 15:08:54 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-13 15:08:54 -0600
+
+
+Started GET "/assets/application.self-628bbc78f1006b830cd306762aa8b8112ebde69c167cfacf24c035c50e263a71.js?body=1" for ::1 at 2015-12-13 15:08:54 -0600
+
+
+Started GET "/assets/logo-73b920b7606c5c415471cad291661ec5c7459e97f3c1bd9ca8b6f9571e2d0dba.png" for ::1 at 2015-12-13 15:08:54 -0600
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 15:08:58 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QnqAIXj3wQE0rvfnmEoKcg6o8EeE6mm1bSt9DTGi6Fcz73aOxP7iH7yCuSC07So4xGDheWUojk9o3wUNqoTuzw==", "estatesale"=>{"title"=>"", "address"=>"2343 a;slkdjasf", "city"=>"dasldkj", "state"=>"tx", "zip_code"=>"", "start_date"=>"", "end_date"=>"", "times"=>"9-5", "description"=>"blahblahblah", "forms_of_payment"=>"", "special_inst"=>"", "img_url"=>""}, "commit"=>"Create Estatesale"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEstatesale Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "estatesales" WHERE "estatesales"."title" = '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  Rendered estatesales/new.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 43ms (Views: 37.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 15:13:08 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EstatesalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QnqAIXj3wQE0rvfnmEoKcg6o8EeE6mm1bSt9DTGi6Fcz73aOxP7iH7yCuSC07So4xGDheWUojk9o3wUNqoTuzw==", "estatesale"=>{"title"=>"", "address"=>"2343 a;slkdjasf", "city"=>"dasldkj", "state"=>"tx", "zip_code"=>"", "start_date"=>"", "end_date"=>"", "times"=>"9-5", "description"=>"blahblahblah", "forms_of_payment"=>"", "special_inst"=>"", "img_url"=>""}, "commit"=>"Create Estatesale"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEstatesale Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "estatesales" WHERE "estatesales"."title" = '' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  Rendered estatesales/new.html.erb within layouts/application (18.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 788ms (Views: 390.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-12-13 15:13:09 -0600
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 15:13:09 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 15:13:09 -0600
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 15:13:09 -0600
+
+
+Started GET "/assets/application.self-36a72a8a6c0bdfeb84b3d58cbdaa9d00b12b9c7f8d939f2fa797ac429e5764f9.css?body=1" for ::1 at 2015-12-13 15:13:09 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-12-13 15:13:09 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 15:13:09 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-13 15:13:09 -0600
+
+
+Started GET "/assets/application.self-628bbc78f1006b830cd306762aa8b8112ebde69c167cfacf24c035c50e263a71.js?body=1" for ::1 at 2015-12-13 15:13:09 -0600
+
+
+Started GET "/assets/logo-73b920b7606c5c415471cad291661ec5c7459e97f3c1bd9ca8b6f9571e2d0dba.png" for ::1 at 2015-12-13 15:13:09 -0600
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 15:13:13 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OBTSisCPxIw3AzP6AioURqpCTqcGxrvi0xUleIcPWB1JgSQlfIbnkr8vfT0ujTQMYIpfmecEXBjW4V14HClehQ==", "estatesale"=>{"title"=>"", "address"=>"2343 a;slkdjasf", "city"=>"dasldkj", "state"=>"tx", "zip_code"=>"", "start_date"=>"", "end_date"=>"", "times"=>"9-5", "description"=>"blahblahblah", "forms_of_payment"=>"", "special_inst"=>"", "img_url"=>""}, "commit"=>"Create Estatesale"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mEstatesale Exists (0.3ms)[0m  SELECT  1 AS one FROM "estatesales" WHERE "estatesales"."title" = '' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered estatesales/new.html.erb within layouts/application (5.6ms)
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 59ms (Views: 51.0ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 15:13:48 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ctnawfFbu3nmZ7pvpcC00ey5ZYeIV5Ni1k3RZQzR+OsXpHEu8xN82+10C6SMCKZjXr0qP/jubeOrU9FDxVBew==", "estatesale"=>{"title"=>"", "address"=>"123 lala land", "city"=>"", "state"=>"", "zip_code"=>"", "start_date"=>"", "end_date"=>"", "times"=>"", "description"=>"blahblahblah", "forms_of_payment"=>"", "special_inst"=>"", "img_url"=>""}, "commit"=>"Create Estatesale"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEstatesale Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "estatesales" WHERE "estatesales"."title" = '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  Rendered estatesales/new.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 45ms (Views: 38.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-12-13 15:13:57 -0600
+Processing by EstatesalesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mEstatesale Load (0.8ms)[0m  SELECT "estatesales".* FROM "estatesales"
+  Rendered estatesales/index.html.erb within layouts/application (6.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 105ms (Views: 103.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/estatesales/new" for ::1 at 2015-12-13 15:17:50 -0600
+Processing by EstatesalesController#new as HTML
+  Rendered estatesales/new.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/estatesales/new" for ::1 at 2015-12-13 15:17:55 -0600
+Processing by EstatesalesController#new as HTML
+  Rendered estatesales/new.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/estatesales/new" for ::1 at 2015-12-13 15:18:08 -0600
+Processing by EstatesalesController#new as HTML
+  Rendered estatesales/new.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 37ms (Views: 35.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-12-13 15:18:08 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 15:18:08 -0600
+
+
+Started GET "/assets/application.self-36a72a8a6c0bdfeb84b3d58cbdaa9d00b12b9c7f8d939f2fa797ac429e5764f9.css?body=1" for ::1 at 2015-12-13 15:18:08 -0600
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 15:18:08 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 15:18:08 -0600
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 15:18:08 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-12-13 15:18:08 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-13 15:18:08 -0600
+
+
+Started GET "/assets/application.self-628bbc78f1006b830cd306762aa8b8112ebde69c167cfacf24c035c50e263a71.js?body=1" for ::1 at 2015-12-13 15:18:08 -0600
+
+
+Started GET "/assets/logo-73b920b7606c5c415471cad291661ec5c7459e97f3c1bd9ca8b6f9571e2d0dba.png" for ::1 at 2015-12-13 15:18:08 -0600
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 15:18:24 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zd7oiYGzLeXPXspERGUykGG2UD8kIPoVWhwrYA5EFj68Sx4mPboO+0dyhINowhLaq35BAcXiHe9f6FNglWIQpg==", "estatesale"=>{"title"=>"", "address"=>"123 bryn mawr", "city"=>"dallas", "state"=>"tx", "zip_code"=>"", "start_date"=>"", "end_date"=>"", "times"=>"", "description"=>"", "forms_of_payment"=>"", "special_inst"=>"", "img_url"=>""}, "commit"=>"Create Estatesale"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mEstatesale Exists (0.3ms)[0m  SELECT  1 AS one FROM "estatesales" WHERE "estatesales"."title" = '' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered estatesales/new.html.erb within layouts/application (3.9ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 116ms (Views: 108.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-12-13 15:18:28 -0600
+Processing by EstatesalesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mEstatesale Load (0.3ms)[0m  [1mSELECT "estatesales".* FROM "estatesales"[0m
+  Rendered estatesales/index.html.erb within layouts/application (3.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/estatesales/new" for ::1 at 2015-12-13 15:19:15 -0600
+Processing by EstatesalesController#new as HTML
+  Rendered estatesales/new.html.erb within layouts/application (4.4ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-12-13 15:19:17 -0600
+Processing by EstatesalesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mEstatesale Load (0.3ms)[0m  [1mSELECT "estatesales".* FROM "estatesales"[0m
+  Rendered estatesales/index.html.erb within layouts/application (4.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.6ms)
