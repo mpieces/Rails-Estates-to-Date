@@ -1,5 +1,8 @@
 
-
+<!-- Should welcome both user types -->
+<% if logged_in? %>
+<h1>Welcome, <%= current_user.username %>!</h1>
+<% end %>
 
 <!-- Zip code search form -->
 

@@ -1,18 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
 /*  12 COLUMN : RESPONSIVE GRID SYSTEM
   DEVELOPER : DENIS LEBLANC
   URL : http://responsive.gs
@@ -49,12 +35,6 @@ html {
   position: relative;*/
 }
 
-.logo {
-  margin-top: -137px;
-  margin-left: 85px;
-  text-align: center;
-  z-index: 10;
-}
 
 
 /*  SELF CLEARING FLOATS - CLEARFIX METHOD */
@@ -136,6 +116,13 @@ html {
   font-size: 20px;
 }
 
+.logo {
+  margin-top: -137px;
+  margin-left: 85px;
+  text-align: center;
+  z-index: 10;
+}
+
 a, a:visited, a:active {
   text-decoration:none;
   color: gray;
@@ -206,7 +193,7 @@ body {
   background: black;
   background:url("http://i.imgur.com/BaKvHel.jpg") center top no-repeat;
 }
-
+/*
 @font-face {
   font-family:"Myriad Pro";
   src: url('MyriadPro.otf');
@@ -215,23 +202,18 @@ body {
 @font-face {
   font-family:"Myriad Pro Bold";
   src: url('MyriadProBold.otf');
-}
+}*/
 
 
 
 .nav {
 /*  background:#D2EDEB;*/
-  height:37px;
+  height: 37px;
   z-index: 10;
   margin-top: -10px;
   text-align: center;
   /*padding-top: 37px;
   padding-left: 30px;*/
-
- /* border-left:1px solid #ccc;
-  border-right:1px solid #ccc;
-  border-bottom:1px solid #ccc;
-  border-top:1px solid #ccc;*/
 }
 
 .nav a {
@@ -254,11 +236,7 @@ body {
   color:white;
 }
 
-/*.nav-inner {
-  padding:0px 0 0 0px;
-  width:970px;
-  text-align:left;
-}*/
+
 
 
 /*#############################*/
