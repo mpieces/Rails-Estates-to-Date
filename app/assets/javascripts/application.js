@@ -19,10 +19,10 @@ $(document).ready(function() {
 
   addToFavoritesBox();
   favorited();
-  signInShopper();
-  signInLister();
-  signUpShopper();
-  distance();
+  // signInShopper();
+  // signInLister();
+  // // signUpShopper();
+  // distance();
 });
 
 var addToFavoritesBox = function () {
@@ -42,7 +42,7 @@ var toggleStar = function () {
 
 // Saves a sale as a favorite:
 var favorited = function () {
-  $('#favorite-link').on('click', function (event) {
+  $('a[data-remote]').on('click', function (event) {
     event.preventDefault();
       // console.log(this, "link");
 
@@ -69,6 +69,9 @@ var favorited = function () {
   });
 };
 
+
+
+fav
 var signInShopper = function () {
   $('#favorites-container a:first').on('click', function(event) {
     event.preventDefault();
