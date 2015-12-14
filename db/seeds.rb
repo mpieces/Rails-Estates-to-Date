@@ -90,4 +90,18 @@ Estatesale.create(
     img_url: "http://www.24-7estatesales.com/plugins/content/jw_sigpro/sigpro.transparent.gif"
     )
 
+Estatesale.create(
+    title: "Highland Park Market",
+    address: "720 Lupton Circle",
+    city: "Dallas",
+    state: "TX",
+    zip_code: "75226",
+    start_date: "Friday, September 15",
+    end_date: "Sunday, September 17",
+    times: "10:00 am until 4:00 pm",
+    description: "A fabulous sale ........",
+    forms_of_payment: "Cash & Checks (with 2 forms of ID)",
+    special_inst: "No Children",
+    img_url: "http://www.24-7estatesales.com/plugins/content/jw_sigpro/sigpro.transparent.gif"
+    )
 
