@@ -1,30 +1,28 @@
 
 <div class="row">
-
-
   <div class="col span_4">
-      <!-- Add sale to favorites -->
-
-      <%= link_to 'Add to favorites', favorite_sales_path(sale_id: @sale), method: :post %>
-
-
-   <!--  form: { "data-type" => "json" } %>
-
-
-     user_favorites_path(estatesale_id: params[:estatesale_id]) %> -->
-
-<!--
-        <a id="see-favorites" href="/favorites">See All Favorites</a> -->
-
-
-
+    <div class="favorites">
+  <!-- Add sale to favorites -->
+      <p>
+        <% if logged_in? %>
+          <%= link_to 'Add to favorites', favorite_sales_path(sale_id: @sale), method: :post %>
+      </p>
+        <% if notice %>
+          <p id="notice"><%= notice %></p>
+        <% end %>
+  <!-- See all favorites link -->
+      <p>
+        <%= link_to 'See all favorites', favorite_sales_path(sale_id: @sale) %>
+      </p>
+        <% end %>
+    </div>
+      <!-- AJAX CALLS NEED TO ADD: -->
       <!--  div id = star container -->
       <!--  div id = favorites container  -->
-
   </div>
 
   <div class="col span_4">
-    <!-- Individual Sale Details: -->
+     <!-- Individual Sale Details: -->
     <div id="sale-container" data-address="<%= @sale.address %>, <%= @sale.city%>, <%= @sale.state %>, <%= @sale.zip_code %>">
 
       <h1><%= @sale.title %></h1>
@@ -39,6 +37,7 @@
       <h3><%= @sale.description %></h3>
       <h3><em>Forms of Payment Accepted:</em> <%= @sale.forms_of_payment %></h3>
       <h3><em>Special Instructions:</em> <%= @sale.special_inst %></h3>
+      <!-- NEED TO ADD PHOTOS OF SALE -->
       <h3>Photos: <img src="<%= @sale.img_url %>"></h3>
 
 
@@ -46,13 +45,10 @@
         <%= link_to 'Back', estatesales_path %>
       </h3>
 
-
     <!-- Edit listing button:  -->
       <h3>
         <%= link_to 'Edit this Listing', edit_estatesale_path(@sale) %>
       </h3>
-
- <!--    Errors -->
 
     <!-- Delete listing button:  -->
       <h3>

@@ -1,17 +1,17 @@
 <h3>Log In</h3>
 
 <%= form_for(:session, url: login_path) do |f| %>
-<p>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-</p>
-<p>
-  <%= f.label :password %>
-  <%= f.text_field :password %>
-</p>
-<p>
-  <%= f.submit "Log In" %>
-</p>
+  <p>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.submit "Log In" %>
+  </p>
 <% end %>
 
 <p>New User?  <%= link_to "Sign up now!", new_user_path %></p>

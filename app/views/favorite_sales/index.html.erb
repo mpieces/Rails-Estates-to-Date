@@ -1,0 +1,36 @@
+<!-- SHOWS ALL FAVORITED SALES -->
+
+<h2><%= current_user.username %>'s Favorite Sales: </h2>
+
+<% if notice %>
+ <p id='notice'><%= notice %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <td><h3><strong>Dates/Times</strong></h3></td>
+      <td><h3><strong>Sale Name / Company</strong></h3></td>
+      <td><h3><strong>Location</strong></h3></td>
+      <!--   Need to add distance: -->
+      <!-- <td><h3><strong>Distance</strong></h3></td> -->
+    </tr>
+  </thead>
+  <tbody>
+    <hr>
+      <% @favorites.each do |f| %>
+        <tr>
+          <td><%= f.start_date%> - <%= f.end_date%><br><%= f.times%></td>
+          <td><a href="/estatesales"><%=f.title%></a><br>Lasted updated: <%=f.updated_at%></td>
+          <td><%=f.address%><br><%=f.city%>, <%=f.state%>  <%=f.zip_code%></td>
+             <!--  Need to re-work notes part -->
+          <td>Notes: <input type="text" name="notes"><input type="submit" value="Save"></td>
+          <td><%= link_to 'Remove', f, method: :delete %></td>
+        </tr>
+      <%end%>
+
+ <!-- <td>Listed by: favorite.estatesale.company.company_name</td> -->
+
+  </tbody>
+</table>
+

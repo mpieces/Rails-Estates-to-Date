@@ -37,15 +37,18 @@ ActiveRecord::Schema.define(version: 20151213233725) do
   add_index "estatesales", ["lister_id"], name: "index_estatesales_on_lister_id", using: :btree
 
   create_table "favorites", force: :cascade do |t|
-    t.string   "notes"
+    t.integer  "favorited_id"
+    t.string   "favorited_type"
+    t.integer  "user_id"
     t.integer  "shopper_id"
-    t.integer  "estatesale_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "notes"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
-  add_index "favorites", ["estatesale_id"], name: "index_favorites_on_estatesale_id", using: :btree
+  add_index "favorites", ["favorited_type", "favorited_id"], name: "index_favorites_on_favorited_type_and_favorited_id", using: :btree
   add_index "favorites", ["shopper_id"], name: "index_favorites_on_shopper_id", using: :btree
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "type"

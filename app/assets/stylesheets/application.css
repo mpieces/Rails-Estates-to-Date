@@ -17,25 +17,17 @@ html {
   box-sizing: inherit;
   }
 
-.debug {
+/*.debug {
   border: 1px solid red;
-}
-/*  MAIN CONTAINER
-  Set the width to whatever you want the width of your site to be. */
+}*/
+
+ /*MAIN CONTAINER*/
 
 .container {
   max-width: 940px;
   margin: 0 auto;
   background: white;
-  /*min-width:300px;
-  min-height: 900px;
-  height: 1200px;*/
-
- /* text-align: center;
-  position: relative;*/
 }
-
-
 
 /*  SELF CLEARING FLOATS - CLEARFIX METHOD */
 .container:after,
@@ -52,7 +44,6 @@ html {
   Set bottom padding according to preference */
 .row { padding-bottom: 0em;
 }
-
 
 /* DEFAULT COLUMN STYLES */
 .col {
@@ -131,7 +122,6 @@ a, a:visited, a:active {
 
 a:hover {
   text-decoration:underline;
-  /*text-shadow:none;*/
 }
 
 #filled  {
@@ -147,15 +137,16 @@ a:hover {
   border-radius: 5px;
 }
 
-
 /*Google map inset: */
 #map-canvas {
   border: 2px solid gray;
   height: 250px;
   width: 100%;
+  position: relative;
+  top: 50px;
 }
 /*
-Sign Up or Sign In Box*/
+Sign Up or Sign In Box - not in use now*/
 #favorites-container {
   visibility: hidden;
   height: 80px;
@@ -177,9 +168,7 @@ Sign Up or Sign In Box*/
   width: 80%;
 }
 
-
 body {
- /* background-image: url("http://i.imgur.com/BaKvHel.jpg");*/
   margin:0;
   padding:0;
   background:white;
@@ -193,27 +182,12 @@ body {
   background: black;
   background:url("http://i.imgur.com/BaKvHel.jpg") center top no-repeat;
 }
-/*
-@font-face {
-  font-family:"Myriad Pro";
-  src: url('MyriadPro.otf');
-}
-
-@font-face {
-  font-family:"Myriad Pro Bold";
-  src: url('MyriadProBold.otf');
-}*/
-
-
 
 .nav {
-/*  background:#D2EDEB;*/
   height: 37px;
   z-index: 10;
   margin-top: -10px;
   text-align: center;
-  /*padding-top: 37px;
-  padding-left: 30px;*/
 }
 
 .nav a {
@@ -221,11 +195,9 @@ body {
   opacity:1;
   padding:11px;
   height: 35px;
-/*  border-right:1px solid #ccc;*/
   display:inline-block;
   height:27px;
   font-size:15px;
-  /*text-shadow:0 1px 0 none;*/
   width:138px;
   text-align:center;
 }
@@ -235,24 +207,6 @@ body {
   background:#0A5D39;
   color:white;
 }
-
-
-
-
-/*#############################*/
-/*Needed?*/
-.pic {
-  border-radius:5px;
-  margin-top:-5px;
-}
-
-.top {
-  background:url('bg/header_bg2.png') top center;
-  height:166px;
-}
-/*Needed? end #####################*/
-
-
 
 table {
   width: 800px;
@@ -271,4 +225,8 @@ tr:hover {
   background-color: #c3e6e5;
 }
 
+.favorites {
+  position: relative;
+  top: 50px;
+}
 

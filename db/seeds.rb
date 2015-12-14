@@ -7,6 +7,10 @@ end
   User.create(type: "Lister", username: Faker::Name.first_name, password: Faker::Internet.password(3,5), email: Faker::Internet.email, company_name: Faker::Company.name, owner_name: Faker::Name.name, company_url: Faker::Internet.url, phone_number: Faker::PhoneNumber.phone_number)
 end
 
+# 5.times do
+#   Company.create(company_name: Faker::Company.name, owner_name: Faker::Name.name, company_url: Faker::Internet.url, phone_number: Faker::PhoneNumber.phone_number)
+# end
+
 Estatesale.create(
     title: "The Jewel Box",
     address: "7424 Meadow Oaks Drive",
@@ -42,13 +46,7 @@ Furniture ... banquet size glass top dining table with 8 upholstered chairs, a m
 
 Collectibles ... costume jewelry, women’s fashion watches, sconces, fine ladies’ clothing and accessories, decoratives, large urns and vases filled with faux flowers, ornate candle holders, a large ornately carved standing cross.
 
-Rugs ~ Ornate Mirrors (including a Venetian mirror) ~ Lighting ~ Framed Art
-
-Miscellaneous ... aluminum ladder, Rubber storage cabinets (in the garage), a flat screen TV, electronics, doggie beds, luggage, GREAT PATIO FURNITURE (just as elegant as the furnishings inside the house), a chimenea with dragonfly pattern.
-
-You won’t see another sale like this one ... this weekend or next!
-
-",
+You won’t see another sale like this one ... this weekend or next!",
     forms_of_payment: "Cash, Checks (with proper ID), Credit Cards",
     special_inst: "No Children"
     )

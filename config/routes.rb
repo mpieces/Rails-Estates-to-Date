@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # resources :users do
   #   resources :favorites
 # end
-  resources :favorite_sales, only: [:create, :destroy]
+  resources :favorite_sales
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

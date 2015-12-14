@@ -15,63 +15,62 @@
     <% end %>
 
   <p>
-      <%= f.label :title %> <br>
-      <%= f.text_field :title %>
+    <%= f.label :title %> <br>
+    <%= f.text_field :title %>
   </p>
 
 <!--  Company Name
  Company_Url -->
 
   <p>
-      <%= f.label :address %>
-      <%= f.text_field :address %>
+    <%= f.label :address %>
+     <%= f.text_field :address %>
   </p>
   <p>
-      <%= f.label :city %>
-      <%= f.text_field :city %>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
   </p>
   <p>
-      <%= f.label :state %>
-      <%= f.text_field :state %>
+    <%= f.label :state %>
+    <%= f.text_field :state %>
   </p>
   <p>
-      <%= f.label :zip_code %>
-      <%= f.text_field :zip_code %>
+    <%= f.label :zip_code %>
+    <%= f.text_field :zip_code %>
   </p>
   <p>
-      <%= f.label :start_date %>
-      <%= f.text_field :start_date %>
+    <%= f.label :start_date %>
+    <%= f.text_field :start_date %>
   </p>
   <p>
-      <%= f.label :end_date %>
-      <%= f.text_field :end_date %>
-  </p>
-
-  <p>
-      <%= f.label :times %>
-      <%= f.text_field :times %>
-  </p>
-
-  <p>
-      <%= f.label :description %>
-      <%= f.text_area :description, rows: 20 %>
+    <%= f.label :end_date %>
+    <%= f.text_field :end_date %>
   </p>
   <p>
-      <%= f.label :forms_of_payment %>
-      <%= f.text_field :forms_of_payment %>
+    <%= f.label :times %>
+    <%= f.text_field :times %>
   </p>
   <p>
-      <%= f.label :special_inst %>
-      <%= f.text_field :special_inst %>
+    <%= f.label :description %>
+    <%= f.text_area :description, rows: 20 %>
   </p>
   <p>
-      <%= f.label :img_url %>
-      <%= f.text_field :img_url %>
+    <%= f.label :forms_of_payment %>
+    <%= f.text_field :forms_of_payment %>
+  </p>
+  <p>
+    <%= f.label :special_inst %>
+    <%= f.text_field :special_inst %>
+  </p>
+  <!-- Need ability to upload images:  -->
+  <p>
+    <%= f.label :img_url %>
+    <%= f.text_field :img_url %>
   </p>
   <p>
    <!--  Change button text here -->
     <%= f.submit %></p>
-  <% end %>
+    <% end %>
   <br>
   <%= link_to 'Back', estatesales_path %>
 </div>

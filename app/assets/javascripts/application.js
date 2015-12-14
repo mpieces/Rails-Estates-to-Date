@@ -1,28 +1,41 @@
+// //Google Maps: /////////////////////
+function initialize() {
+  var mapOptions = {
+    zoom: 12
+  };
 
-// $(document).ready(function() {
+  var map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+
+  geocoder = new google.maps.Geocoder();
+  geocoder.geocode({
+     'address': $('#sale-container').data('address')}, //jquery to grab address in data-address
+    function (results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        console.log(results[0])
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location })
+      };
+    }
+  );
+};
+
+function loadScript() {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBF71KrCs9vUJ-HtrLKTWQ6nKjffwhULZY&v=3.exp' +
+      '&signed_in=true&callback=initialize';
+  document.body.appendChild(script);
+}
+
+window.onload = loadScript;
+
+// Attempted Ajax using Rails
 //   $('#fav-container').html("<%= escape_javascript render(@favorites) %>");
 
-// });
 
-
-
-
-// // This is a manifest file that'll be compiled into application.js, which will include all the files
-// // listed below.
-// //
-// // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// // or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
-// //
-// // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// // compiled file.
-// //
-// // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// // about supported directives.
-// //
-// //= require jquery
-// //= require jquery_ujs
-// //= require turbolinks
-// //= require_tree .
 
 // $(document).ready(function() {
 
@@ -115,6 +128,7 @@
 // };
 
 // // Need to have sign in redirect to new listing form!!
+
 // var signInLister = function () {
 //  $('#advertise-title a').on('click', function(event) {
 //     event.preventDefault();
@@ -149,39 +163,7 @@
 //   });
 // };
 
-// //Google Maps: /////////////////////
-// function initialize() {
-//   var mapOptions = {
-//     zoom: 12
-//   };
 
-//   var map = new google.maps.Map(document.getElementById('map-canvas'),
-//       mapOptions);
-
-//   geocoder = new google.maps.Geocoder();
-//   geocoder.geocode({
-//      'address': $('#sale-container').data('address')}, //jquery to grab address in data-address
-//     function (results, status) {
-//       if (status == google.maps.GeocoderStatus.OK) {
-//         console.log(results[0])
-//         map.setCenter(results[0].geometry.location);
-//         var marker = new google.maps.Marker({
-//         map: map,
-//         position: results[0].geometry.location })
-//       };
-//     }
-//   );
-// };
-
-// function loadScript() {
-//   var script = document.createElement('script');
-//   script.type = 'text/javascript';
-//   script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBF71KrCs9vUJ-HtrLKTWQ6nKjffwhULZY&v=3.exp' +
-//       '&signed_in=true&callback=initialize';
-//   document.body.appendChild(script);
-// }
-
-// window.onload = loadScript;
 
 // // Zip Code API Use:
 

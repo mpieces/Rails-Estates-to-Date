@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Estates-to-Date</title>
+  <head>
+    <title>Estates-to-Date</title>
 
-  <script src="https://use.fonticons.com/65d4015f.js"></script>
+    <script src="https://use.fonticons.com/65d4015f.js"></script>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<body style="background-color:#000">
+  <body style="background-color:#000">
     <div class="container">
-
       <div class="header">
         <a href='/'><img id="head" src="http://i.imgur.com/9bv5xg0.png" alt="header-image"/>
       </div>
@@ -23,9 +22,9 @@
       <div class="nav">
         <%= link_to 'Estate Sales', estatesales_path %>
 
-        <!-- Need to add these later: -->
-        <!-- <a href="#">Auctions</a> -->
-        <!-- <a href="#">Out & About</a> -->
+          <!-- Need to add these later: -->
+          <!-- <a href="#">Auctions</a> -->
+          <!-- <a href="#">Out & About</a> -->
         <a href="#">Companies</a>
 
         <% if !logged_in? %>
@@ -38,15 +37,14 @@
 
         <%= link_to 'Advertise', new_estatesale_path %>
 
-       <!--  Add this later: -->
-       <!--   <a href="#">Contact Us</a> -->
+         <!--  Add this later: -->
+         <!--   <a href="#">Contact Us</a> -->
 
       </div>
 
-        <%= yield %>
+          <%= yield %>
 
-    </div>
+
   </body>
-
 </html>
 
