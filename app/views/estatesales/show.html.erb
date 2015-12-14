@@ -5,7 +5,13 @@
   <div class="col span_4">
       <!-- Add sale to favorites -->
 
+      <%= link_to 'Add to favorites', favorite_sales_path(sale_id: @sale), method: :post %>
 
+
+   <!--  form: { "data-type" => "json" } %>
+
+
+     user_favorites_path(estatesale_id: params[:estatesale_id]) %> -->
 
 <!--
         <a id="see-favorites" href="/favorites">See All Favorites</a> -->

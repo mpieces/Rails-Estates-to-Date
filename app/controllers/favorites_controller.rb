@@ -4,12 +4,13 @@ class FavoritesController < ApplicationController
   # GET /favorites
   # GET /favorites.json
   def index
-    @favorites = Favorite.all
+    @favorite = current_user.favorites
   end
 
   # GET /favorites/1
   # GET /favorites/1.json
   def show
+    @favorite = current_user.favorites
   end
 
   # GET /favorites/new
@@ -24,7 +25,9 @@ class FavoritesController < ApplicationController
   # POST /favorites
   # POST /favorites.json
   def create
-    @favorite = Favorite.new(favorite_params)
+    @user = current_user
+    @favorite = @user.favorites.create(estatesale_id: params[:estatesale_id])
+    # @favorites = Favorite.new(favorite_params)
 
     respond_to do |format|
       if @favorite.save
@@ -62,13 +65,18 @@ class FavoritesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_favorite
-      @favorite = Favorite.find(params[:id])
+
+    def estatesale_params
+      params.require(:estatesale).permit(:title, :address, :city, :state, :zip_code, :start_date, :end_date, :times, :description, :forms_of_payment, :special_inst, :img_url)
     end
+    # Use callbacks to share common setup or constraints between actions.
+    # def set_favorite
+    #   @favorite = Favorite.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def favorite_params
-      params[:favorite]
-    end
+    # def favorite_params
+    #   params[:favorite]
+    # end
+
 end

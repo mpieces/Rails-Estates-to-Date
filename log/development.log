@@ -23283,3 +23283,1664 @@ Processing by EstatesalesController#index as HTML
   [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
 Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFavorites (20151213233725)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (49.3ms)[0m  [1mCREATE TABLE "favorites" ("id" serial primary key, "notes" character varying, "shopper_id" integer, "estatesale_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+PG::DuplicateTable: ERROR:  relation "favorites" already exists
+: CREATE TABLE "favorites" ("id" serial primary key, "notes" character varying, "shopper_id" integer, "estatesale_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (4.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEstatesales (20150818184303)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (27.7ms)[0m  [1mCREATE TABLE "estatesales" ("id" serial primary key, "title" character varying, "address" character varying, "city" character varying, "state" character varying, "zip_code" integer, "start_date" character varying, "end_date" character varying, "times" character varying, "description" character varying, "forms_of_payment" character varying, "special_inst" character varying, "img_url" character varying, "lister_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  CREATE  INDEX  "index_estatesales_on_lister_id" ON "estatesales"  ("lister_id")
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150818184303"]]
+  [1m[35m (5.3ms)[0m  COMMIT
+Migrating to CreateUsers (20150818192458)
+  [1m[36m (5.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.0ms)[0m  CREATE TABLE "users" ("id" serial primary key, "type" character varying, "username" character varying, "password_digest" character varying, "email" character varying, "company_name" character varying, "owner_name" character varying, "company_url" character varying, "phone_number" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150818192458"]]
+  [1m[35m (5.2ms)[0m  COMMIT
+Migrating to CreateFavorites (20151213233725)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.9ms)[0m  CREATE TABLE "favorites" ("id" serial primary key, "notes" character varying, "shopper_id" integer, "estatesale_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX  "index_favorites_on_shopper_id" ON "favorites"  ("shopper_id")[0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX  "index_favorites_on_estatesale_id" ON "favorites"  ("estatesale_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20151213233725"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'estatesales'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'favorites'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["type", "Shopper"], ["username", "Kiera"], ["password_digest", "$2a$10$Q/N3NxKC3fuGFzwbAvUJbO1spbrDUEsTgov0lDvXWNZwynRXdNJfS"], ["email", "zoila.bergnaum@emard.info"], ["company_name", "McKenzie Group"], ["owner_name", "Ruthie Batz"], ["company_url", "http://halvorson.net/rebecca"], ["phone_number", "960.348.7483"], ["created_at", "2015-12-13 23:42:45.102215"], ["updated_at", "2015-12-13 23:42:45.102215"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["type", "Shopper"], ["username", "Leann"], ["password_digest", "$2a$10$ZBFeZLp8M2AD073ieBfSwe0OlYwdZeBI9lLcj.aPkXrU7XvLMl5.O"], ["email", "alyson_reichert@rempel.name"], ["company_name", "Wehner and Sons"], ["owner_name", "Vernice Stark V"], ["company_url", "http://haagstiedemann.com/shaylee.grimes"], ["phone_number", "(940) 379-7700"], ["created_at", "2015-12-13 23:42:45.186805"], ["updated_at", "2015-12-13 23:42:45.186805"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["type", "Shopper"], ["username", "Jazlyn"], ["password_digest", "$2a$10$iVy3D7TZ/MD03LZxswU2HujukDb3GaQ3nVABOyA1Of9Efl56PDBnC"], ["email", "janie.lebsack@towne.biz"], ["company_name", "Windler and Sons"], ["owner_name", "Loraine Yost"], ["company_url", "http://lindgren.org/cleveland_schuster"], ["phone_number", "1-936-553-3310 x6869"], ["created_at", "2015-12-13 23:42:45.309125"], ["updated_at", "2015-12-13 23:42:45.309125"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["type", "Shopper"], ["username", "Stacey"], ["password_digest", "$2a$10$vW68.HNgEQUnGDoj6flNVulfTom1QlE4h4UX4cEl5i1x.DgGRDg9O"], ["email", "lloyd_rowe@rohan.net"], ["company_name", "Goldner and Sons"], ["owner_name", "Arden Tremblay"], ["company_url", "http://stokes.info/coleman"], ["phone_number", "897-591-7241 x9254"], ["created_at", "2015-12-13 23:42:45.383234"], ["updated_at", "2015-12-13 23:42:45.383234"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["type", "Shopper"], ["username", "Hailie"], ["password_digest", "$2a$10$FJoME1Xv7NFJo0718ULzx.cgKFpMpSrkMYoqz3XQzOAMPRjE9ulWy"], ["email", "janiya@greenfelder.biz"], ["company_name", "Romaguera-Mohr"], ["owner_name", "Tyler Cummerata"], ["company_url", "http://sporerschuppe.com/emma"], ["phone_number", "249-902-6857"], ["created_at", "2015-12-13 23:42:45.463954"], ["updated_at", "2015-12-13 23:42:45.463954"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["type", "Lister"], ["username", "Nicholaus"], ["password_digest", "$2a$10$zSt7a6JCeUxOYPoMDF663u4vIRk6r.9g3ekwwCCajRhWImjrxU/RC"], ["email", "queen.luettgen@ritchiewolff.net"], ["company_name", "Sanford-Pouros"], ["owner_name", "Baby Ratke"], ["company_url", "http://boehm.com/alex_abbott"], ["phone_number", "(449) 203-8546 x23275"], ["created_at", "2015-12-13 23:42:45.556109"], ["updated_at", "2015-12-13 23:42:45.556109"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["type", "Lister"], ["username", "Clementina"], ["password_digest", "$2a$10$FX4VMMBDsEv644HRzlM8auqAhrGcqwwiyueGeidf.iBqJm53cvr9y"], ["email", "ernest@haag.org"], ["company_name", "Lynch, Christiansen and Lubowitz"], ["owner_name", "Ignacio Conroy"], ["company_url", "http://fahey.biz/lenora_hayes"], ["phone_number", "225.377.4587 x4019"], ["created_at", "2015-12-13 23:42:45.633516"], ["updated_at", "2015-12-13 23:42:45.633516"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["type", "Lister"], ["username", "Michale"], ["password_digest", "$2a$10$Q4I00wYHceJ8AGQX.4c9Gu5k3PQG2EY3JRvyimz2E6gxqcBo/UPH2"], ["email", "anderson_jakubowski@kohlerboyle.name"], ["company_name", "Kirlin-Bahringer"], ["owner_name", "Allan McCullough II"], ["company_url", "http://pagac.name/anthony"], ["phone_number", "146.120.8050 x283"], ["created_at", "2015-12-13 23:42:45.707697"], ["updated_at", "2015-12-13 23:42:45.707697"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["type", "Lister"], ["username", "Abner"], ["password_digest", "$2a$10$ghzJT2XtB3QRudJSb/WUUOw7bUn.tZ6rwzm1TvX3KTSbytiJccWhu"], ["email", "abdiel@nienow.name"], ["company_name", "Rolfson-Lynch"], ["owner_name", "Genesis Wolf DDS"], ["company_url", "http://bosco.org/joannie"], ["phone_number", "1-966-669-5343"], ["created_at", "2015-12-13 23:42:45.781149"], ["updated_at", "2015-12-13 23:42:45.781149"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["type", "Lister"], ["username", "Estefania"], ["password_digest", "$2a$10$mc.7m1CnavCK0Jx9Uvx6/OakVf0pQtfad3DOpavVUIWCL51AGa51y"], ["email", "estell.turner@halvorson.org"], ["company_name", "Maggio and Sons"], ["owner_name", "Jarred Durgan"], ["company_url", "http://oconner.org/tommie_yost"], ["phone_number", "1-436-664-5081"], ["created_at", "2015-12-13 23:42:45.853582"], ["updated_at", "2015-12-13 23:42:45.853582"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEstatesale Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "estatesales" WHERE "estatesales"."title" = 'The Jewel Box' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "estatesales" ("title", "address", "city", "state", "zip_code", "start_date", "end_date", "times", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["title", "The Jewel Box"], ["address", "7424 Meadow Oaks Drive"], ["city", "Dallas"], ["state", "TX"], ["zip_code", 75230], ["start_date", "Saturday, August 15"], ["end_date", "Sunday, August 16"], ["times", "10:00 am until 4:00 pm"], ["description", "Such a lovely home filled with fine furnishings ... you’ll want to shop just because!  Of course Rusty worked his special magic to make the home a showplace with leather seating ... a burl cylinder desk that Fred and I would love to own ... and elegant lighting, mirrors, and rugs!  Ladies will be standing in line just to checkout the clothing ... designer handbags ... and racks covered in furs.  Regardless of our age, we all love designer pieces ... especially purses and shoes.  As soon as we have Rusty’s list we will add it to what we already fell in love with like the ...\n\nFurniture ... a leather sofa, a wingback leather chair with matching ottoman, large rectangular coffee table, a pair of upholstered arm chairs, lamp tables, antique wash stands, a writing desk, sofa table, a burl cylinder desk (my favorite piece in the whole sale), a game table, a child’s 4-poster canopy bed, a breakfast table with 2 chairs, marble top lamp table, 4-poster bed, a French style table with ormolu, dining table with 8 chairs, a drop front desk, a beautiful glass display case, a buffet, a daybed, knee hole desk, ladies’ writing desk.\n\nCollectibles ... Herend fishnet bunnies, puppets, hundreds of designer purses (St. John, Coach, Carlos Falchi), a wonderful selection of fur coats, dolls (some antique), Oriental kimonos, Stangle pottery (dinnerware), vintage patterns, vintage board games, framed Audubon bird prints, crystal (including stems), a collection bookends, coffee table books, sconces, silverplate.\n\nLighting (including crystal table lamps) ~ Mirrors ~ Several Rugs\n\nA Full Kitchen"], ["created_at", "2015-12-13 23:42:45.884072"], ["updated_at", "2015-12-13 23:42:45.884072"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEstatesale Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "estatesales" WHERE "estatesales"."title" = 'Help Me Rhonda' LIMIT 1[0m
+  [1m[35mSQL (13.3ms)[0m  INSERT INTO "estatesales" ("title", "address", "city", "state", "zip_code", "start_date", "end_date", "times", "description", "forms_of_payment", "special_inst", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["title", "Help Me Rhonda"], ["address", "3101 Prestonwood Drive"], ["city", "Plano"], ["state", "TX"], ["zip_code", 75093], ["start_date", "Friday, August 14"], ["end_date", "Sunday, August 16"], ["times", "10:00 am until 5:00 pm"], ["description", "DRAMATIC ... every room is a standout with plush sofas accented with fringe ... a velvety red throne chair fit for The Queen ... banquet size glass top dining table that seats 8 guests comfortably ... and decorative accents that finish off each room to perfection!  We’re certain you’ll love the cupid statuary ... the decorative pillows ... crystal lamps ... and large urns and vases filled with faux flowers that add color and interest throughout the house.  There’s even doggie beds coordinated with different living areas.  If you’re wanting to create more excitement and interest in your home furnishings ... Help Me Ronda is the place to start your shopping weekend.  Begin with ...\n\nFurniture ... banquet size glass top dining table with 8 upholstered chairs, a matching mirrored server, a breakfast table (elegantly styled) with upholstered chairs, 2 ornate fringed sofas in chocolate brown, glass top coffee table, bar stools, queen size bed with velvet padded headboard, marble top Bombay chest, king size 4-poster canopy bed (with elegant bedding), 2-drawer ornate night stand, round ornate night stand, a custom upholstered love seat with scalloped bottom edges, an accent chair with matching ottoman, ornately carved pillared armoire.\n\nCollectibles ... costume jewelry, women’s fashion watches, sconces, fine ladies’ clothing and accessories, decoratives, large urns and vases filled with faux flowers, ornate candle holders, a large ornately carved standing cross.\n\nRugs ~ Ornate Mirrors (including a Venetian mirror) ~ Lighting ~ Framed Art\n\nMiscellaneous ... aluminum ladder, Rubber storage cabinets (in the garage), a flat screen TV, electronics, doggie beds, luggage, GREAT PATIO FURNITURE (just as elegant as the furnishings inside the house), a chimenea with dragonfly pattern.\n\nYou won’t see another sale like this one ... this weekend or next!\n\n"], ["forms_of_payment", "Cash, Checks (with proper ID), Credit Cards"], ["special_inst", "No Children"], ["created_at", "2015-12-13 23:42:45.894685"], ["updated_at", "2015-12-13 23:42:45.894685"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEstatesale Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "estatesales" WHERE "estatesales"."title" = 'C2 Estate Sales' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "estatesales" ("title", "address", "city", "state", "zip_code", "start_date", "end_date", "times", "description", "forms_of_payment", "special_inst", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["title", "C2 Estate Sales"], ["address", "6547 Sondra Drive"], ["city", "Plano"], ["state", "TX"], ["zip_code", 75214], ["start_date", "Friday, August 14"], ["end_date", "Sunday, August 16"], ["times", "10:00 am until 5:00 pm"], ["description", "It’s the details that set a beautifully decorated home into a simply gorgeous one.  And that’s exactly what Charm has on Sondra Drive.  The subtle swirl pattern on the theater sofas elevates them to STAR status along with the single pedestal custom dining table by Jonathan Charles.  I can’t take my eyes off the stylish queen size bed with the royal looking headboard and elegant night stands.  Then there are equally detailed smalls like the multi-colored decorative pottery with etched patterns ... crystal stems ... and white cookware with gold trim.  Charms’ sales are always beautiful, but this one rises to a whole different level.  Begin your shopping experience with ...\n\nFurniture ... several chairs from Robb & Stucky, custom made dining table and kidney shaped ladies’s writing desk by Jonathan Charles, an antique French ormolu accented writing desk, an antique French sideboard, custom made upholstered sofas (perfect addition for a theater room), a pair of antique English night stands, Victorian parlor tables, a leather sofa with matching chair and ottoman, glass coffee table and matching lamp tables, an elegantly designed queen bed with two matching night stands, an antique rotating bookcase, an animal print arm chair (matched with the ladies writing desk), painted TV armoire,\n\nCollectibles ... costume jewelry, crystal stems, stained glass windows, decorative copper, a pair of lion statues, crystal lamps and Tiffany style floor lamp, decorative pottery, Blue Willow platter,\n\nRugs ~ Mirrors ~ Lighting ~ Decorator Art beautifully framed.\n\nFull Kitchen including a Kitchen Aid Mixer.\n\nMiscellaneous ... women’s clothing (small size), men’s designer ties by Ferragamo, shoes (size 9.5) by Allen Edmond, custom made men’s dress shirts, Christmas decorations, ladies’ clothing (including a wedding gown)."], ["forms_of_payment", "Cash only"], ["special_inst", "No Children"], ["created_at", "2015-12-13 23:42:45.912296"], ["updated_at", "2015-12-13 23:42:45.912296"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEstatesale Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "estatesales" WHERE "estatesales"."title" = 'A Family Estate Sale' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "estatesales" ("title", "address", "city", "state", "zip_code", "start_date", "end_date", "times", "description", "forms_of_payment", "special_inst", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["title", "A Family Estate Sale"], ["address", "6625 Walnut Hill Lane"], ["city", "Dallas"], ["state", "TX"], ["zip_code", 75230], ["start_date", "Friday, August 14"], ["end_date", "Sunday, August 16"], ["times", "10:00 am until 4:00 pm"], ["description", "A fabulous sale requiring a unique approach from Anita and Sue.  First, it starts off as a “By Appointment Only” sale on Wednesday and Thursday.  The homeowner was a clothes horse who filled her home with designer clothing, shoes, purses, belts, furs, hats – everything necessary to put her best professional foot forward.  Her clothing ranges from size 2~6; shoe size 5 ½ ~ 6.  In order for shoppers to have the time (and space) to try things on, Anita and Sue will limit the number of people inside the home the first two days.  Then starting Friday, the sale will be open to the public ... no appointment necessary.  Ladies, you won’t be able to resist designer clothing from Escada, Armani, Vera Wang, BCBGMAXAZRIA, and others; designer purses by Fendi, Michael Kors, or purses made from exotic skins like alligator; shoes and boots (from ankle to knee) by Gucci, Prada, Bruno Magli, Jimmy Choo, Manolo Blahnik, Stuart Weitzman, and others; and gorgeous fur coats and fur trimmed sweaters.  Even the belts are designer ... Escada and Nancy Gonzalez.  It’s a boutique estate sale from start to finish."], ["forms_of_payment", "Cash & Checks (with 2 forms of ID)"], ["special_inst", "Bring Help to Load; No Children"], ["img_url", "http://www.24-7estatesales.com/plugins/content/jw_sigpro/sigpro.transparent.gif"], ["created_at", "2015-12-13 23:42:45.915252"], ["updated_at", "2015-12-13 23:42:45.915252"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/estatesales" for ::1 at 2015-12-13 17:43:39 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EstatesalesController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mEstatesale Load (0.4ms)[0m  [1mSELECT "estatesales".* FROM "estatesales"[0m
+  Rendered estatesales/index.html.erb within layouts/application (27.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 567ms (Views: 547.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 17:43:40 -0600
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 17:43:40 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-12-13 17:43:40 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 17:43:40 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 17:43:40 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-12-13 17:43:40 -0600
+
+
+Started GET "/assets/application.self-36a72a8a6c0bdfeb84b3d58cbdaa9d00b12b9c7f8d939f2fa797ac429e5764f9.css?body=1" for ::1 at 2015-12-13 17:43:40 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-13 17:43:40 -0600
+
+
+Started GET "/assets/application.self-628bbc78f1006b830cd306762aa8b8112ebde69c167cfacf24c035c50e263a71.js?body=1" for ::1 at 2015-12-13 17:43:40 -0600
+
+
+Started GET "/assets/logo-73b920b7606c5c415471cad291661ec5c7459e97f3c1bd9ca8b6f9571e2d0dba.png" for ::1 at 2015-12-13 17:43:40 -0600
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 17:43:45 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.3ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 37ms (Views: 31.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/rails/info/routes" for ::1 at 2015-12-13 17:44:12 -0600
+Processing by Rails::InfoController#routes as HTML
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/railties-4.2.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 17:52:33 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEstatesale Load (0.2ms)[0m  [1mSELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"favorites", :id=>"1"} missing required keys: [:user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', user_favorites_path %>
+     9: 
+    10: <!--
+    11:         <a id="see-favorites" href="/favorites">See All Favorites</a> -->
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364938557260'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (56.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (81.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (39.8ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 17:52:52 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.3ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered estatesales/show.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.1ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"favorites", :user_id=>nil} missing required keys: [:user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', user_favorites_path(current_user) %>
+     9: 
+    10: <!--
+    11:         <a id="see-favorites" href="/favorites">See All Favorites</a> -->
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364925134260'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.4ms)
+
+
+Started POST "/estatesales/console/repl_sessions/3f4cddb330d134de840a9c0cd3c1806a/trace" for ::1 at 2015-12-13 17:57:52 -0600
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 17:57:53 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.2ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered estatesales/show.html.erb within layouts/application (59.6ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 2.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"favorites", :user_id=>nil} missing required keys: [:user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', user_favorites_path(current_user) %>
+     9: 
+    10: <!--
+    11:         <a id="see-favorites" href="/favorites">See All Favorites</a> -->
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364925134260'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (73.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.2ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 17:57:57 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.2ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered estatesales/show.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"favorites", :user_id=>nil} missing required keys: [:user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', user_favorites_path(current_user) %>
+     9: 
+    10: <!--
+    11:         <a id="see-favorites" href="/favorites">See All Favorites</a> -->
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364925134260'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.6ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 17:58:11 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.2ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered estatesales/show.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.6ms)
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', user_favorites_path(current_user.id) %>
+     9: 
+    10: <!--
+    11:         <a id="see-favorites" href="/favorites">See All Favorites</a> -->
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364937887060'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.1ms)
+
+
+Started GET "/rails/info/routes" for ::1 at 2015-12-13 17:59:01 -0600
+Processing by Rails::InfoController#routes as HTML
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/railties-4.2.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 17:59:04 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.2ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered estatesales/show.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"favorites", :id=>nil, :user_id=>nil} missing required keys: [:id, :user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', user_favorite_path(current_user) %>
+     9: 
+    10: <!--
+    11:         <a id="see-favorites" href="/favorites">See All Favorites</a> -->
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364939733960'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (60.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (87.6ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:02:39 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.7ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (undefined local variable or method `estatesale' for #<#<Class:0x007ffe3a7924b8>:0x007ffe38902c78>):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', user_favorite_path(estatesale_id: estatesale) %>
+     9: 
+    10: <!--
+    11:         <a id="see-favorites" href="/favorites">See All Favorites</a> -->
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364923724200'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.3ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:03:25 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEstatesale Load (0.2ms)[0m  [1mSELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"favorites", :id=>"1", :sale_id=>#<Estatesale id: 1, title: "The Jewel Box", address: "7424 Meadow Oaks Drive", city: "Dallas", state: "TX", zip_code: 75230, start_date: "Saturday, August 15", end_date: "Sunday, August 16", times: "10:00 am until 4:00 pm", description: "Such a lovely home filled with fine furnishings .....", forms_of_payment: nil, special_inst: nil, img_url: nil, lister_id: nil, created_at: "2015-12-13 23:42:45", updated_at: "2015-12-13 23:42:45">} missing required keys: [:user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', user_favorite_path(sale_id: @sale) %>
+     9: 
+    10: <!--
+    11:         <a id="see-favorites" href="/favorites">See All Favorites</a> -->
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364938229620'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.4ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:04:56 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.2ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered estatesales/show.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"favorites", :id=>"1", :sale_id=>#<Estatesale id: 1, title: "The Jewel Box", address: "7424 Meadow Oaks Drive", city: "Dallas", state: "TX", zip_code: 75230, start_date: "Saturday, August 15", end_date: "Sunday, August 16", times: "10:00 am until 4:00 pm", description: "Such a lovely home filled with fine furnishings .....", forms_of_payment: nil, special_inst: nil, img_url: nil, lister_id: nil, created_at: "2015-12-13 23:42:45", updated_at: "2015-12-13 23:42:45">, :user_id=>nil} missing required keys: [:user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', user_favorite_path(user_id: current_user, sale_id: @sale) %>
+     9: 
+    10: <!--
+    11:         <a id="see-favorites" href="/favorites">See All Favorites</a> -->
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364940403640'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (58.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (70.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (87.5ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:06:06 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.2ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered estatesales/show.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"favorites", :id=>"1", :sale_id=>#<Estatesale id: 1, title: "The Jewel Box", address: "7424 Meadow Oaks Drive", city: "Dallas", state: "TX", zip_code: 75230, start_date: "Saturday, August 15", end_date: "Sunday, August 16", times: "10:00 am until 4:00 pm", description: "Such a lovely home filled with fine furnishings .....", forms_of_payment: nil, special_inst: nil, img_url: nil, lister_id: nil, created_at: "2015-12-13 23:42:45", updated_at: "2015-12-13 23:42:45">, :user_id=>nil} missing required keys: [:user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', user_favorite_path(user_id: current_user, sale_id: @sale) %>
+     9: 
+    10: <!--
+    11:         <a id="see-favorites" href="/favorites">See All Favorites</a> -->
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364924353340'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.0ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:07:25 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.3ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered estatesales/show.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"favorites", :id=>"1", :user_id=>nil} missing required keys: [:user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', user_favorite_path(user_id: current_user) %>
+     9: 
+    10: <!--
+    11:         <a id="see-favorites" href="/favorites">See All Favorites</a> -->
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364937732120'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (25.4ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:07:58 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.2ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (68.3ms)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined local variable or method `user_id' for #<#<Class:0x007ffe3a7924b8>:0x007ffe3a8137e8>):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', user_favorite_path(current_user: user_id) %>
+     9: 
+    10: <!--
+    11:         <a id="see-favorites" href="/favorites">See All Favorites</a> -->
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364939981420'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (71.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (85.1ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:09:19 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEstatesale Load (0.2ms)[0m  [1mSELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (12.2ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined local variable or method `user_id' for #<#<Class:0x007ffe3a7924b8>:0x007ffe38c10438>):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', user_favorites_path(current_user: user_id) %>
+     9: 
+    10: <!--
+    11:         <a id="see-favorites" href="/favorites">See All Favorites</a> -->
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364925466820'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.7ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:09:35 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.2ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered estatesales/show.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"favorites", :id=>"1", :user_id=>nil} missing required keys: [:user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', user_favorites_path(user_id: current_user) %>
+     9: 
+    10: <!--
+    11:         <a id="see-favorites" href="/favorites">See All Favorites</a> -->
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364938781760'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.7ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:10:43 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.3ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"favorites", :estatesale_id=>nil, :id=>"1"} missing required keys: [:user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', user_favorites_path(estatesale_id: params[:estatesale_id]) %>
+     9: 
+    10: <!--
+    11:         <a id="see-favorites" href="/favorites">See All Favorites</a> -->
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364940902100'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (71.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (86.1ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:13:53 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEstatesale Load (0.2ms)[0m  [1mSELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 45ms (Views: 43.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-12-13 18:13:53 -0600
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:13:53 -0600
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:13:53 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:13:53 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:13:53 -0600
+
+
+Started GET "/assets/application.self-36a72a8a6c0bdfeb84b3d58cbdaa9d00b12b9c7f8d939f2fa797ac429e5764f9.css?body=1" for ::1 at 2015-12-13 18:13:53 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-12-13 18:13:53 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-13 18:13:53 -0600
+
+
+Started GET "/assets/application.self-628bbc78f1006b830cd306762aa8b8112ebde69c167cfacf24c035c50e263a71.js?body=1" for ::1 at 2015-12-13 18:13:53 -0600
+
+
+Started GET "/assets/logo-73b920b7606c5c415471cad291661ec5c7459e97f3c1bd9ca8b6f9571e2d0dba.png" for ::1 at 2015-12-13 18:13:53 -0600
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 18:13:57 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"authenticity_token"=>"rTn4dR2RxIRAvSMCE/y6Ya5b89Q1GwvxlBW4kaUIYuLcrA7aoZjnmsiRbcU/W5orZJPi6tTZ7AuR4cCRPi5keg=="}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: estatesale):
+  app/controllers/estatesales_controller.rb:47:in `estatesale_params'
+  app/controllers/estatesales_controller.rb:19:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.3ms)
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 18:17:39 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"authenticity_token"=>"rTn4dR2RxIRAvSMCE/y6Ya5b89Q1GwvxlBW4kaUIYuLcrA7aoZjnmsiRbcU/W5orZJPi6tTZ7AuR4cCRPi5keg=="}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: estatesale):
+  app/controllers/estatesales_controller.rb:47:in `estatesale_params'
+  app/controllers/estatesales_controller.rb:19:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (71.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (87.6ms)
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 18:18:46 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"authenticity_token"=>"rTn4dR2RxIRAvSMCE/y6Ya5b89Q1GwvxlBW4kaUIYuLcrA7aoZjnmsiRbcU/W5orZJPi6tTZ7AuR4cCRPi5keg=="}
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: estatesale):
+  app/controllers/estatesales_controller.rb:47:in `estatesale_params'
+  app/controllers/estatesales_controller.rb:19:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (58.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.5ms)
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 18:19:21 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"authenticity_token"=>"rTn4dR2RxIRAvSMCE/y6Ya5b89Q1GwvxlBW4kaUIYuLcrA7aoZjnmsiRbcU/W5orZJPi6tTZ7AuR4cCRPi5keg=="}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: estatesale):
+  app/controllers/estatesales_controller.rb:47:in `estatesale_params'
+  app/controllers/estatesales_controller.rb:19:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.1ms)
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 18:20:14 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"authenticity_token"=>"rTn4dR2RxIRAvSMCE/y6Ya5b89Q1GwvxlBW4kaUIYuLcrA7aoZjnmsiRbcU/W5orZJPi6tTZ7AuR4cCRPi5keg=="}
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: estatesale):
+  app/controllers/estatesales_controller.rb:47:in `estatesale_params'
+  app/controllers/estatesales_controller.rb:19:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (87.3ms)
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 18:20:54 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"authenticity_token"=>"rTn4dR2RxIRAvSMCE/y6Ya5b89Q1GwvxlBW4kaUIYuLcrA7aoZjnmsiRbcU/W5orZJPi6tTZ7AuR4cCRPi5keg=="}
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: estatesale):
+  app/controllers/estatesales_controller.rb:47:in `estatesale_params'
+  app/controllers/estatesales_controller.rb:19:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (86.7ms)
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 18:22:57 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"authenticity_token"=>"rTn4dR2RxIRAvSMCE/y6Ya5b89Q1GwvxlBW4kaUIYuLcrA7aoZjnmsiRbcU/W5orZJPi6tTZ7AuR4cCRPi5keg=="}
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: estatesale):
+  app/controllers/estatesales_controller.rb:47:in `estatesale_params'
+  app/controllers/estatesales_controller.rb:19:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (60.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (30.4ms)
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 18:24:14 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"authenticity_token"=>"rTn4dR2RxIRAvSMCE/y6Ya5b89Q1GwvxlBW4kaUIYuLcrA7aoZjnmsiRbcU/W5orZJPi6tTZ7AuR4cCRPi5keg=="}
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: estatesale):
+  app/controllers/estatesales_controller.rb:47:in `estatesale_params'
+  app/controllers/estatesales_controller.rb:19:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.1ms)
+
+
+Started POST "/estatesales" for ::1 at 2015-12-13 18:24:19 -0600
+Processing by EstatesalesController#create as HTML
+  Parameters: {"authenticity_token"=>"rTn4dR2RxIRAvSMCE/y6Ya5b89Q1GwvxlBW4kaUIYuLcrA7aoZjnmsiRbcU/W5orZJPi6tTZ7AuR4cCRPi5keg=="}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: estatesale):
+  app/controllers/estatesales_controller.rb:47:in `estatesale_params'
+  app/controllers/estatesales_controller.rb:19:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (86.5ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:24:22 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.1ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.4ms)
+
+SyntaxError (/Users/marisaramon/Desktop/Rails-Passion-Project/app/views/estatesales/show.html.erb:8: syntax error, unexpected '}', expecting =>
+...{ action: "create", @favorite }, remote: false );@output_buf...
+...                               ^):
+  app/views/estatesales/show.html.erb:8: syntax error, unexpected '}', expecting =>
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.4ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:27:06 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEstatesale Load (0.2ms)[0m  [1mSELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"favorites", :id=>"1"} missing required keys: [:user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', { action: "create"}, user_favorites_path, remote: false %>
+     9: 
+    10: 
+    11:    <!--  form: { "data-type" => "json" } %>
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364939048000'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.6ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:27:33 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.2ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"favorites", :id=>"1"} missing required keys: [:user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', { action: "create"}, user_favorites_path, current_user, remote: false %>
+     9: 
+    10: 
+    11:    <!--  form: { "data-type" => "json" } %>
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364895501140'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (61.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (74.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (89.9ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:27:37 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEstatesale Load (0.3ms)[0m  [1mSELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"favorites", :id=>"1"} missing required keys: [:user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', { action: "create"}, user_favorites_path, current_user, remote: false %>
+     9: 
+    10: 
+    11:    <!--  form: { "data-type" => "json" } %>
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364895501140'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.8ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-12-13 18:27:40 -0600
+Processing by EstatesalesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mEstatesale Load (0.4ms)[0m  [1mSELECT "estatesales".* FROM "estatesales"[0m
+  Rendered estatesales/index.html.erb within layouts/application (9.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 60ms (Views: 57.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-12-13 18:27:40 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:27:40 -0600
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:27:40 -0600
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:27:40 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:27:40 -0600
+
+
+Started GET "/assets/application.self-36a72a8a6c0bdfeb84b3d58cbdaa9d00b12b9c7f8d939f2fa797ac429e5764f9.css?body=1" for ::1 at 2015-12-13 18:27:40 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-12-13 18:27:40 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-13 18:27:40 -0600
+
+
+Started GET "/assets/application.self-628bbc78f1006b830cd306762aa8b8112ebde69c167cfacf24c035c50e263a71.js?body=1" for ::1 at 2015-12-13 18:27:40 -0600
+
+
+Started GET "/assets/logo-73b920b7606c5c415471cad291661ec5c7459e97f3c1bd9ca8b6f9571e2d0dba.png" for ::1 at 2015-12-13 18:27:40 -0600
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:27:43 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.2ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"favorites", :id=>"1"} missing required keys: [:user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', { action: "create"}, user_favorites_path, current_user, remote: false %>
+     9: 
+    10: 
+    11:    <!--  form: { "data-type" => "json" } %>
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364920848460'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (59.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (88.6ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:27:43 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEstatesale Load (4.4ms)[0m  [1mSELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 4.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"favorites", :id=>"1"} missing required keys: [:user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', { action: "create"}, user_favorites_path, current_user, remote: false %>
+     9: 
+    10: 
+    11:    <!--  form: { "data-type" => "json" } %>
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364895501140'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (111.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (30.9ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:29:00 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.2ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"favorites", :id=>"1"} missing required keys: [:user_id]):
+     5:   <div class="col span_4">
+     6:       <!-- Add sale to favorites -->
+     7: 
+     8:     <%= button_to 'Add to Favorites', { action: "create"}, user_favorites_path, user_id: current_user %>
+     9: 
+    10: 
+    11:    <!--  form: { "data-type" => "json" } %>
+  app/views/estatesales/show.html.erb:8:in `_app_views_estatesales_show_html_erb___1158914827129500665_70364937977960'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'estatesales'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'favorites'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:49:49 -0600
+
+SyntaxError (/Users/marisaramon/Desktop/Rails-Passion-Project/config/routes.rb:74: syntax error, unexpected keyword_end, expecting end-of-input):
+  config/routes.rb:74: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.8ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:50:23 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.4ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 489ms (Views: 446.6ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-12-13 18:50:23 -0600
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:50:23 -0600
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:50:23 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:50:23 -0600
+
+
+Started GET "/assets/application.self-36a72a8a6c0bdfeb84b3d58cbdaa9d00b12b9c7f8d939f2fa797ac429e5764f9.css?body=1" for ::1 at 2015-12-13 18:50:23 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:50:23 -0600
+
+
+Started GET "/assets/favorite_sales.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:50:23 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-12-13 18:50:23 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-13 18:50:23 -0600
+
+
+Started GET "/assets/application.self-628bbc78f1006b830cd306762aa8b8112ebde69c167cfacf24c035c50e263a71.js?body=1" for ::1 at 2015-12-13 18:50:23 -0600
+
+
+Started GET "/assets/logo-73b920b7606c5c415471cad291661ec5c7459e97f3c1bd9ca8b6f9571e2d0dba.png" for ::1 at 2015-12-13 18:50:24 -0600
+
+
+Started POST "/favorite_sales?sale_id=1" for ::1 at 2015-12-13 18:50:27 -0600
+Processing by FavoriteSalesController#create as HTML
+  Parameters: {"authenticity_token"=>"f1Mob1ZQn2dtx+EpQruEq5gGy2nYhjp4t3nE7mF1yJsOxt7A6lm8eeXrr+5uHKThUs7aVzlE3YKyjbzu+lPOAw==", "sale_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 1.7ms)
+
+ActiveModel::MissingAttributeError (can't write unknown attribute `favorited_id`):
+  app/controllers/favorite_sales_controller.rb:4:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (30.7ms)
+
+
+Started POST "/favorite_sales?sale_id=1" for ::1 at 2015-12-13 18:52:00 -0600
+Processing by FavoriteSalesController#create as HTML
+  Parameters: {"authenticity_token"=>"f1Mob1ZQn2dtx+EpQruEq5gGy2nYhjp4t3nE7mF1yJsOxt7A6lm8eeXrr+5uHKThUs7aVzlE3YKyjbzu+lPOAw==", "sale_id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.0ms)
+
+ActiveModel::MissingAttributeError (can't write unknown attribute `favorited_id`):
+  app/controllers/favorite_sales_controller.rb:4:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.6ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:52:39 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEstatesale Load (0.3ms)[0m  [1mSELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 51ms (Views: 33.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-12-13 18:52:39 -0600
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:52:39 -0600
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:52:39 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:52:39 -0600
+
+
+Started GET "/assets/application.self-36a72a8a6c0bdfeb84b3d58cbdaa9d00b12b9c7f8d939f2fa797ac429e5764f9.css?body=1" for ::1 at 2015-12-13 18:52:39 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:52:39 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-12-13 18:52:39 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-13 18:52:39 -0600
+
+
+Started GET "/assets/favorite_sales.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:52:39 -0600
+
+
+Started GET "/assets/application.self-628bbc78f1006b830cd306762aa8b8112ebde69c167cfacf24c035c50e263a71.js?body=1" for ::1 at 2015-12-13 18:52:39 -0600
+
+
+Started GET "/assets/logo-73b920b7606c5c415471cad291661ec5c7459e97f3c1bd9ca8b6f9571e2d0dba.png" for ::1 at 2015-12-13 18:52:39 -0600
+
+
+Started POST "/favorite_sales?sale_id=1" for ::1 at 2015-12-13 18:52:40 -0600
+Processing by FavoriteSalesController#create as HTML
+  Parameters: {"authenticity_token"=>"ouMMe2ZUqKM9m2Qu85SRFPNgXbnMDKBp3gy65/6ZPfXTdvrU2l2LvbW3KunfM7FeOahMhy3OR5Pb+MLnZb87bQ==", "sale_id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms)
+
+ActiveModel::MissingAttributeError (can't write unknown attribute `favorited_id`):
+  app/controllers/favorite_sales_controller.rb:4:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (70.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (84.4ms)
+
+
+Started POST "/favorite_sales?sale_id=1" for ::1 at 2015-12-13 18:53:22 -0600
+Processing by FavoriteSalesController#create as HTML
+  Parameters: {"authenticity_token"=>"ouMMe2ZUqKM9m2Qu85SRFPNgXbnMDKBp3gy65/6ZPfXTdvrU2l2LvbW3KunfM7FeOahMhy3OR5Pb+MLnZb87bQ==", "sale_id"=>"1"}
+  [1m[36mEstatesale Load (0.3ms)[0m  [1mSELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 4.0ms)
+
+ActiveModel::MissingAttributeError (can't write unknown attribute `favorited_id`):
+  app/controllers/favorite_sales_controller.rb:5:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.1ms)
+
+
+Started POST "/favorite_sales?sale_id=1" for ::1 at 2015-12-13 18:54:47 -0600
+Processing by FavoriteSalesController#create as HTML
+  Parameters: {"authenticity_token"=>"ouMMe2ZUqKM9m2Qu85SRFPNgXbnMDKBp3gy65/6ZPfXTdvrU2l2LvbW3KunfM7FeOahMhy3OR5Pb+MLnZb87bQ==", "sale_id"=>"1"}
+  [1m[36mEstatesale Load (0.2ms)[0m  [1mSELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 1.4ms)
+
+NameError (uninitialized constant FavoriteSalesController::FavoriteSale):
+  app/controllers/favorite_sales_controller.rb:5:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.6ms)
+
+
+Started POST "/favorite_sales?sale_id=1" for ::1 at 2015-12-13 18:56:00 -0600
+Processing by FavoriteSalesController#create as HTML
+  Parameters: {"authenticity_token"=>"ouMMe2ZUqKM9m2Qu85SRFPNgXbnMDKBp3gy65/6ZPfXTdvrU2l2LvbW3KunfM7FeOahMhy3OR5Pb+MLnZb87bQ==", "sale_id"=>"1"}
+  [1m[35mEstatesale Load (0.2ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 7ms (ActiveRecord: 1.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Estatesale with 'id'=):
+  app/controllers/favorite_sales_controller.rb:20:in `set_sale'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.0ms)
+
+
+Started POST "/favorite_sales?sale_id=1" for ::1 at 2015-12-13 18:56:45 -0600
+Processing by FavoriteSalesController#create as HTML
+  Parameters: {"authenticity_token"=>"ouMMe2ZUqKM9m2Qu85SRFPNgXbnMDKBp3gy65/6ZPfXTdvrU2l2LvbW3KunfM7FeOahMhy3OR5Pb+MLnZb87bQ==", "sale_id"=>"1"}
+  [1m[36mEstatesale Load (0.2ms)[0m  [1mSELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 3.5ms)
+
+ActiveModel::MissingAttributeError (can't write unknown attribute `favorited_id`):
+  app/controllers/favorite_sales_controller.rb:5:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.7ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.0ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:56:54 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEstatesale Load (0.2ms)[0m  [1mSELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-12-13 18:56:54 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:56:54 -0600
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:56:54 -0600
+
+
+Started GET "/assets/estatesale.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:56:54 -0600
+
+
+Started GET "/assets/favorite_sales.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:56:54 -0600
+
+
+Started GET "/assets/application.self-36a72a8a6c0bdfeb84b3d58cbdaa9d00b12b9c7f8d939f2fa797ac429e5764f9.css?body=1" for ::1 at 2015-12-13 18:56:54 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-12-13 18:56:54 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-13 18:56:54 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 18:56:54 -0600
+
+
+Started GET "/assets/application.self-628bbc78f1006b830cd306762aa8b8112ebde69c167cfacf24c035c50e263a71.js?body=1" for ::1 at 2015-12-13 18:56:54 -0600
+
+
+Started GET "/assets/logo-73b920b7606c5c415471cad291661ec5c7459e97f3c1bd9ca8b6f9571e2d0dba.png" for ::1 at 2015-12-13 18:56:54 -0600
+
+
+Started POST "/favorite_sales?sale_id=1" for ::1 at 2015-12-13 18:56:55 -0600
+Processing by FavoriteSalesController#create as HTML
+  Parameters: {"authenticity_token"=>"CIDrUlBHmzzq8HFlodYIPqpzbWa0feGXB5bM69Ca7VB5FR397E64ImLcP6KNcSh0YLt8WFW/Bm0CYrTrS7zryA==", "sale_id"=>"1"}
+  [1m[35mEstatesale Load (0.2ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms)
+
+ActiveModel::MissingAttributeError (can't write unknown attribute `favorited_id`):
+  app/controllers/favorite_sales_controller.rb:5:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (30.6ms)
+
+
+Started GET "/login" for ::1 at 2015-12-13 18:57:02 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (376.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 468ms (Views: 467.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/login" for ::1 at 2015-12-13 18:57:09 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"49b0NjF0l1lTu1uT2klTEAgsLFCAaamuk7BIhnNturGSQwKZjX20R9uXFVT27nNawuQ9bmGrTlSWRDCG6Eu8KQ==", "session"=>{"username"=>"mer0522", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "mer0522"]]
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 45ms (Views: 43.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/login" for ::1 at 2015-12-13 18:57:18 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vqa+NcYo4WWVyfjnlVRt2PJLXYQfKmWArTNPPTbgXxInM0iaeiHCex3ltiC5802SOINMuv7ognqoxzc9rcZZig==", "session"=>{"username"=>"mer", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "mer"]]
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for ::1 at 2015-12-13 18:57:22 -0600
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (14.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 68ms (Views: 52.9ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/users" for ::1 at 2015-12-13 18:57:30 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bFMNDiWXSrMhAlSkqIl/aSBYWKVbSqQAOQt4ekkAE/odxvuhmZ5prakuGmOELl8j6pBJm7qIQ/o8/wB60iYVYg==", "user"=>{"username"=>"mer", "password"=>"[FILTERED]", "email"=>"", "type"=>"Shopper", "company_name"=>"", "owner_name"=>"", "company_url"=>"", "phone_number"=>""}, "commit"=>"Create account"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("type", "username", "password_digest", "email", "company_name", "owner_name", "company_url", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["type", "Shopper"], ["username", "mer"], ["password_digest", "$2a$10$02Xj/wMhaBaf6j4Fti.rpu9LL1NyX7dbytF.agDDQlR776MaQ.f2i"], ["email", ""], ["company_name", ""], ["owner_name", ""], ["company_url", ""], ["phone_number", ""], ["created_at", "2015-12-14 00:57:31.042618"], ["updated_at", "2015-12-14 00:57:31.042618"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/estatesales
+Completed 302 Found in 160ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/estatesales" for ::1 at 2015-12-13 18:57:31 -0600
+Processing by EstatesalesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mEstatesale Load (0.3ms)[0m  [1mSELECT "estatesales".* FROM "estatesales"[0m
+  Rendered estatesales/index.html.erb within layouts/application (4.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/estatesales/1" for ::1 at 2015-12-13 18:57:33 -0600
+Processing by EstatesalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEstatesale Load (0.3ms)[0m  SELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered estatesales/show.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 11]]
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/favorite_sales?sale_id=1" for ::1 at 2015-12-13 18:57:35 -0600
+Processing by FavoriteSalesController#create as HTML
+  Parameters: {"authenticity_token"=>"W79WdfnSROuupfsOjo9Dz+acYgK4b/CVCFx0C9EHJ4wqKqDaRdtn9SaJtcmiKGOFLFRzPFmtF28NqAwLSiEhFA==", "sale_id"=>"1"}
+  [1m[36mEstatesale Load (0.2ms)[0m  [1mSELECT  "estatesales".* FROM "estatesales" WHERE "estatesales"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 11]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms)
+
+ActiveModel::MissingAttributeError (can't write unknown attribute `favorited_id`):
+  app/controllers/favorite_sales_controller.rb:5:in `create'
+
+
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.1ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/marisaramon/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.9ms)

@@ -4,7 +4,7 @@ class Estatesale < ActiveRecord::Base
 
 
   belongs_to :lister
-  #added:
+  #added (different from Sinatra set up):
   has_many :favorites
   has_many :shoppers, through: :favorites
 end
