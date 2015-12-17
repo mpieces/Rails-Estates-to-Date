@@ -5,11 +5,12 @@
   <!-- Add sale to favorites -->
       <p>
         <% if logged_in? %>
-          <%= link_to 'Add to favorites', favorite_sales_path(sale_id: @sale), method: :post %>
+          <%= button_to 'Add this sale to favorites', favorite_sales_path(sale_id: @sale), method: :post %>
       </p>
         <% if notice %>
           <p id="notice"><%= notice %></p>
         <% end %>
+
   <!-- See all favorites link -->
       <p>
         <%= link_to 'See all favorites', favorite_sales_path(sale_id: @sale) %>

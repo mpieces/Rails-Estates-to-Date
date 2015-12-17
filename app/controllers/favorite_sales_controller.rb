@@ -5,15 +5,15 @@ class FavoriteSalesController < ApplicationController
     @favorites = current_user.favorite_sales
   end
 
-  def show
-    @favorites = current_user.favorite_sales
-  end
+  # def show
+  #   @favorites = current_user.favorite_sales
+  # end
 
   def create
     if Favorite.create(favorited: @sale, user: current_user)
       redirect_to @sale, notice: 'Sale has been added to favorites'
     else
-      redirect_to @sale, alert: 'Something went wrong'
+      redirect_to @sale, alert: 'Something went wrong!'
     end
   end
 

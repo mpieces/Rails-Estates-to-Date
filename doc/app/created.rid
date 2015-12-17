@@ -1,0 +1,17 @@
+Sun, 13 Dec 2015 23:04:25 -0600
+README.rdoc	Wed, 19 Aug 2015 13:08:09 -0500
+app/controllers/application_controller.rb	Fri, 21 Aug 2015 23:40:17 -0500
+app/controllers/estatesales_controller.rb	Wed, 19 Aug 2015 17:10:41 -0500
+app/controllers/favorite_sales_controller.rb	Sun, 13 Dec 2015 22:29:02 -0600
+app/controllers/sessions_controller.rb	Sun, 13 Dec 2015 22:50:56 -0600
+app/controllers/users_controller.rb	Fri, 21 Aug 2015 23:45:53 -0500
+app/helpers/application_helper.rb	Wed, 19 Aug 2015 13:08:09 -0500
+app/helpers/estatesale_helper.rb	Sat, 12 Dec 2015 21:44:51 -0600
+app/helpers/favorite_sales_helper.rb	Sun, 13 Dec 2015 18:43:02 -0600
+app/helpers/sessions_helper.rb	Wed, 19 Aug 2015 22:03:41 -0500
+app/helpers/users_helper.rb	Sat, 12 Dec 2015 21:45:00 -0600
+app/models/estatesale.rb	Sun, 13 Dec 2015 17:49:14 -0600
+app/models/favorite.rb	Sun, 13 Dec 2015 19:28:12 -0600
+app/models/lister.rb	Sun, 13 Dec 2015 19:32:21 -0600
+app/models/shopper.rb	Sun, 13 Dec 2015 19:28:37 -0600
+app/models/user.rb	Sun, 13 Dec 2015 18:37:05 -0600
