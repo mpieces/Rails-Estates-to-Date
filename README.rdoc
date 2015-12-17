@@ -1,13 +1,13 @@
 
 This uses Rails 4.
-To run this, clone to your local drive. Then in terminal: 
+To run this, clone to your local drive. Then in terminal:
 1. rake db:create
 2. rake db:migrate
 3. rake db:seed
 4. rails s
 
 Please sign up to see how adding a sale to favorites works. You only need a username and password at the moment.
-I'm still working on porting this project over from Sinatra....more features and better validations to come. 
+I'm still working on porting this project over from Sinatra....more features and better validations to come.
 
 
 

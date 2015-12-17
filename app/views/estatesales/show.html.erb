@@ -5,7 +5,9 @@
   <!-- Add sale to favorites -->
       <p>
         <% if logged_in? %>
+          <%- unless current_user.favorite_sales.exists?(id: @sale.id) -%>
           <%= button_to 'Add this sale to favorites', favorite_sales_path(sale_id: @sale), method: :post %>
+          <%- end -%>
       </p>
         <% if notice %>
           <p id="notice"><%= notice %></p>
