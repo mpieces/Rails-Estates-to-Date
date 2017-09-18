@@ -28,6 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
 gem 'faker'
 gem 'httparty'
+gem 'geocoder'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -42,3 +43,6 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 end
 
+group :development do
+  gem 'meta_request' # for rails-panel
+end

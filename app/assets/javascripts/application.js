@@ -1,36 +1,52 @@
 // //Google Maps: /////////////////////
-function initialize() {
+// function initialize() {
+
+/*
+ function initMap() {
+
+
   var mapOptions = {
     zoom: 12
   };
 
-  var map = new google.maps.Map(document.getElementById('map-canvas'),
+  map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
-
-  geocoder = new google.maps.Geocoder();
-  geocoder.geocode({
-     'address': $('#sale-container').data('address')}, //jquery to grab address in data-address
-    function (results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        console.log(results[0])
-        map.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-        map: map,
-        position: results[0].geometry.location })
-      };
-    }
-  );
-};
-
-function loadScript() {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBF71KrCs9vUJ-HtrLKTWQ6nKjffwhULZY&v=3.exp' +
-      '&signed_in=true&callback=initialize';
-  document.body.appendChild(script);
 }
+*/
 
-window.onload = loadScript;
+/*
+ var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map-canvas'), {
+        //center: {lat: -34.397, lng: 150.644},
+        zoom: 8
+      });
+    }
+
+    */
+//   geocoder = new google.maps.Geocoder();
+//   geocoder.geocode({
+//      'address': $('#sale-container').data('address')}, //jquery to grab address in data-address
+//     function (results, status) {
+//       if (status == google.maps.GeocoderStatus.OK) {
+//         console.log(results[0])
+//         map.setCenter(results[0].geometry.location);
+//         var marker = new google.maps.Marker({
+//         map: map,
+//         position: results[0].geometry.location })
+//       };
+//     }
+//   );
+// };
+
+// function initMap() {
+//   var script = document.createElement('script');
+//   script.type = 'text/javascript';
+//   script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBF71KrCs9vUJ-HtrLKTWQ6nKjffwhULZY&callback=initMap';
+//   document.body.appendChild(script);
+// }
+
+//window.onload = initMap;
 
 // Attempted Ajax using Rails
 //   $('#fav-container').html("<%= escape_javascript render(@favorites) %>");

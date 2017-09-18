@@ -61,7 +61,42 @@
   </div>
   <div class="col span_4">
     <div id="map-canvas">
-      "Google map inset"
+      Google map inset
     </div>
   </div>
 </div>
+
+<script type='text/javascript'>
+  var map;
+  function initMap() {
+
+      var location = {lat: <%= @sale.latitude %>, lng: <%= @sale.longitude %> };
+      map = new google.maps.Map(
+        document.getElementById('map-canvas'),
+        {
+          center: location,
+          zoom: 12
+       }
+      );
+
+      var marker = new google.maps.Marker({
+         position: location,
+         map: map
+      });
+
+
+    }
+
+  /*
+  window.initMap = function() {
+    var location = {lat: <%= @sale.latitude %>, lng: <%= @sale.longitude %>};
+    map = new google.maps.Map(document.getElementById('map-canvas'), {
+      center: location,
+      zoom: 8
+    });
+  }
+  */
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyo_TTVJ_17KjZr5Q2eb07CjuAQ6CZj_U&callback=initMap" async defer></script>
+

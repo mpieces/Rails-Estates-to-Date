@@ -7,7 +7,7 @@
 <!-- Zip code search form -->
  <div class="distance-search debug">
       <p>Search for sales in you area by zip code:</p>
-      <%= form_tag("/search", method: "get") do %>
+      <%= form_tag("/estatesales", method: "get") do %>
         <%= label_tag(:zip_code, "Zip Code:") %>
         <%= text_field_tag(:zip_code) %>
         <%= submit_tag("Search") %>
@@ -33,6 +33,11 @@
         <td><%=sale.start_date%> - <%=sale.end_date%><br><%=sale.times%></td>
         <td><%= link_to sale.title, estatesale_path(sale) %><br>Lasted updated: <%=sale.updated_at%></td>
         <td><%=sale.address%><br><%=sale.city%>, <%=sale.state%>  <%=sale.zip_code%></td>
+        <td>
+          <% if params[:zip_code].present? %>
+            <%= sale.distance_from(params[:zip_code]) %> miles
+          <% end %>
+        </td>
       </tr>
 
         <!-- <td>Listed by: sale.company.company_name </td> -->
