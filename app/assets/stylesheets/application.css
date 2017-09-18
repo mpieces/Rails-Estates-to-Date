@@ -97,6 +97,7 @@ html {
 .header {
 /*  height:90px;*/
  /* background-image: url('http://i.imgur.com/9bv5xg0.png');*/
+ position: relative;
 }
 
 .header, a {
@@ -108,10 +109,14 @@ html {
 }
 
 .logo {
-  margin-top: -137px;
   margin-left: 85px;
   text-align: center;
   z-index: 10;
+  position: absolute;
+  top: 30px;
+  margin: 0 auto;
+  right: 0;
+  left: 0;
 }
 
 a, a:visited, a:active {
@@ -186,17 +191,19 @@ body {
 .nav {
   height: 37px;
   z-index: 10;
-  margin-top: -10px;
   text-align: center;
+  top: 128px;
+  right: 0;
+  left: -42px;
+  margin: 0 auto;
+  position: absolute;
 }
 
 .nav a {
   color:gray;
   opacity:1;
-  padding:11px;
-  height: 35px;
+  padding:10px 20px;
   display:inline-block;
-  height:27px;
   font-size:15px;
   width:138px;
   text-align:center;

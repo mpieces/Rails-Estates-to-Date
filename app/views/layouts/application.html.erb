@@ -13,13 +13,11 @@
   <body style="background-color:#000">
     <div class="container">
       <div class="header">
-        <a href='/'><img id="head" src="http://i.imgur.com/9bv5xg0.png" alt="header-image"/>
-      </div>
-      <div class="logo">
-        <%= image_tag("logo.png", alt: "logo", :id => "logo") %>
-      </div>
-
-      <div class="nav">
+        <a href='/'><img id="head" src="http://i.imgur.com/9bv5xg0.png" alt="header-image"/></a>
+          <div class="logo">
+            <%= image_tag("logo.png", alt: "logo", :id => "logo") %>
+          </div>
+       <div class="nav">
         <%= link_to 'Estate Sales', estatesales_path %>
 
           <!-- Need to add these later: -->
@@ -32,7 +30,7 @@
           <%= link_to 'Log In', login_path %>
         <% end %>
         <%  if logged_in? %>
-          <%= link_to 'Log Out', logout_path, method: :delete %>
+          <%= link_to 'Log Out', logout_path %>
         <% end %>
 
         <%= link_to 'Advertise', new_estatesale_path %>
@@ -42,9 +40,15 @@
 
       </div>
 
+
+      </div>
+
+
+
+
           <%= yield %>
 
-
+    </div>
   </body>
 </html>
 
