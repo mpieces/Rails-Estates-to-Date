@@ -46,3 +46,5 @@ end
 group :development do
   gem 'meta_request' # for rails-panel
 end
+
+gem 'pg', group: :production
