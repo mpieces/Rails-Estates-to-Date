@@ -23,7 +23,8 @@
           <!-- Need to add these later: -->
           <!-- <a href="#">Auctions</a> -->
           <!-- <a href="#">Out & About</a> -->
-        <a href="#">Companies</a>
+        <%= link_to 'Hire a Company', companies_path %>
+        <%= link_to 'List your Sale', list_path %>
 
         <% if !logged_in? %>
           <%= link_to 'Sign Up', new_user_path %>
@@ -32,8 +33,6 @@
         <%  if logged_in? %>
           <%= link_to 'Log Out', logout_path %>
         <% end %>
-
-        <%= link_to 'Advertise', new_estatesale_path %>
 
          <!--  Add this later: -->
          <!--   <a href="#">Contact Us</a> -->

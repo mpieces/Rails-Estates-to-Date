@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy'
   resources :estatesales
   resources :users
+  get 'companies' => 'companies#index'
+  get 'list' => 'estatesales#advertise'
   # resources :users do
   #   resources :favorites
 # end

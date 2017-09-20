@@ -7,9 +7,9 @@ end
   User.create(type: "Lister", username: Faker::Name.first_name, password: Faker::Internet.password(3,5), email: Faker::Internet.email, company_name: Faker::Company.name, owner_name: Faker::Name.name, company_url: Faker::Internet.url, phone_number: Faker::PhoneNumber.phone_number)
 end
 
-# 5.times do
-#   Company.create(company_name: Faker::Company.name, owner_name: Faker::Name.name, company_url: Faker::Internet.url, phone_number: Faker::PhoneNumber.phone_number)
-# end
+5.times do
+  Company.create(company_name: Faker::Company.name, owner_name: Faker::Name.name, company_url: Faker::Internet.url, phone_number: Faker::PhoneNumber.phone_number)
+end
 
 Estatesale.create(
     title: "The Jewel Box",

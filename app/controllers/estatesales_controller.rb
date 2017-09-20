@@ -42,6 +42,10 @@ class EstatesalesController < ApplicationController
     redirect_to estatesales_path
   end
 
+  def advertise
+    render :advertise
+  end
+
   private
     def estatesale_params
       params.require(:estatesale).permit(:title, :address, :city, :state, :zip_code, :start_date, :end_date, :times, :description, :forms_of_payment, :special_inst, :img_url)

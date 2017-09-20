@@ -17,6 +17,13 @@ html {
   box-sizing: inherit;
   }
 
+html, body {
+ margin: 0;
+ padding: 0;
+ height: 100%;
+
+}
+
 /*.debug {
   border: 1px solid red;
 }*/
@@ -27,6 +34,8 @@ html {
   max-width: 940px;
   margin: 0 auto;
   background: white;
+  height: 100%;
+
 }
 
 /*  SELF CLEARING FLOATS - CLEARFIX METHOD */
