@@ -29,6 +29,7 @@ gem 'pry'
 gem 'faker'
 gem 'httparty'
 gem 'geocoder'
+gem 'bootstrap-sass', '3.3.7'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

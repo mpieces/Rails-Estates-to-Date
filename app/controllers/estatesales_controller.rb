@@ -42,7 +42,7 @@ class EstatesalesController < ApplicationController
     redirect_to estatesales_path
   end
 
-  def advertise
+  def list
     render :advertise
   end
 

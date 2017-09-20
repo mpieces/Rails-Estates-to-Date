@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :estatesales
   resources :users
   get 'companies' => 'companies#index'
-  get 'list' => 'estatesales#advertise'
+  get 'list' => 'estatesales#list'
   # resources :users do
   #   resources :favorites
 # end
