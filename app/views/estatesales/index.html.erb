@@ -5,7 +5,7 @@
 <% end %>
 
 <!-- Zip code search form -->
- <div class="distance-search debug">
+ <div class="distance-search">
       <p>Search for sales in you area by zip code:</p>
       <%= form_tag("/estatesales", method: "get") do %>
         <%= label_tag(:zip_code, "Zip Code:") %>
@@ -15,7 +15,7 @@
     </div>
 
 
-<div class="sales-container debug">
+<div class="sales-container">
   <h2>Current Sales & Auctions: </h2>
   <table>
     <thead>

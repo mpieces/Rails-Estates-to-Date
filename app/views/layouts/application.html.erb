@@ -11,12 +11,14 @@
   </head>
 
   <body style="background-color:#000">
-    <div class="container">
-      <div class="header">
-        <a href='/'><img id="head" src="http://i.imgur.com/9bv5xg0.png" alt="header-image"/></a>
-          <div class="logo">
+      <div class="jumbotron">
+        <div class="container">
+
             <%= image_tag("logo.png", alt: "logo", :id => "logo") %>
-          </div>
+          <p class="header-subtext">Estate Sales & Auctions in the Seattle area</p>
+        </div>
+      </div>
+
        <div class="nav">
         <%= link_to 'Find Estate Sales', estatesales_path %>
 
@@ -25,7 +27,7 @@
           <!-- <a href="#">Out & About</a> -->
         <%= link_to 'Hire a Company', companies_path %>
         <%= link_to 'List your Sale', list_path %>
-
+        <a href='#'>Contact Us</a>
         <% if !logged_in? %>
           <%= link_to 'Sign Up', new_user_path %>
           <%= link_to 'Log In', login_path %>
@@ -33,16 +35,16 @@
         <%  if logged_in? %>
           <%= link_to 'Log Out', logout_path %>
         <% end %>
+       </div>
 
-         <!--  Add this later: -->
-         <!--   <a href="#">Contact Us</a> -->
-
-      </div>
-    </div>
-
+    <div id="main-container" class="container">
+      <div class="row">
+        <div class="col-md-8">
 
           <%= yield %>
 
+        </div>
+      </div>
     </div>
   </body>
 </html>

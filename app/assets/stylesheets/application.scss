@@ -23,56 +23,100 @@ html, body {
  margin: 0;
  padding: 0;
  height: 100%;
-
 }
 
-/*.debug {
-  border: 1px solid red;
-}*/
+body {
+  background: white;
+  background:url("http://i.imgur.com/BaKvHel.jpg") center top no-repeat;
+
+  /*font-family: "Myriad Pro","Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  /*font-size: 14px;*/
+  /*line-height: 18px;*/
+  /*color: #333;*/
+  /*text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);*/
+  /*text-align:center;*/
+}
+
+.jumbotron {
+  height: 165px;
+  background-image: url('http://i.imgur.com/9bv5xg0.png');
+  max-width: 910px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#logo {
+  z-index: 10;
+  max-width: 424px;
+  position: absolute;
+  top: 0;
+  right: 125px;
+}
+
+.header-subtext {
+  margin-left: 450px;
+  margin-top: 40px;
+  color: white;
+}
 
  /*MAIN CONTAINER*/
-
-.container {
-  max-width: 940px;
+#main-container {
+  height: 100%;
+  max-width: 910px;
   margin: 0 auto;
   background: white;
-  height: 100%;
+  padding-top: 100px;
 }
 
-.header {
-/*  height:90px;*/
- /* background-image: url('http://i.imgur.com/9bv5xg0.png');*/
- position: relative;
+
+
+.nav {
+  height: 37px;
+  z-index: 10;
+  text-align: center;
+  top: 128px;
+  right: 0;
+  left: -42px;
+  margin: 0 auto;
+  position: absolute;
 }
 
-.header, a {
+.nav a {
+  color:gray;
+  opacity:1;
+  padding:10px 20px;
+  display:inline-block;
+  font-size:15px;
+  width:138px;
+  text-align:center;
+}
+
+.nav a:hover, .nav a.selected {
+  text-decoration:none;
+  background:#0A5D39;
+  color:white;
+}
+
+.nav a {
   text-align: center;
   text-decoration: none;
-  float: center;
   font-family: "Myriad Pro","Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 20px;
 }
 
-.logo {
-  margin-left: 85px;
-  text-align: center;
-  z-index: 10;
-  position: absolute;
-  top: 30px;
-  margin: 0 auto;
-  right: 0;
-  left: 0;
-}
+
 
 a, a:visited, a:active {
   text-decoration:none;
   color: gray;
- /* text-shadow:none;*/
+
 }
 
 a:hover {
   text-decoration:underline;
 }
+
+
 
 #filled  {
   visibility: hidden;
@@ -118,47 +162,8 @@ Sign Up or Sign In Box - not in use now*/
   width: 80%;
 }
 
-body {
-  margin:0;
-  padding:0;
-  background:white;
-  text-align:center;
-  font-family: "Myriad Pro","Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 18px;
-  color: #333;
-  height:100%;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  background: black;
-  background:url("http://i.imgur.com/BaKvHel.jpg") center top no-repeat;
-}
 
-.nav {
-  height: 37px;
-  z-index: 10;
-  text-align: center;
-  top: 128px;
-  right: 0;
-  left: -42px;
-  margin: 0 auto;
-  position: absolute;
-}
 
-.nav a {
-  color:gray;
-  opacity:1;
-  padding:10px 20px;
-  display:inline-block;
-  font-size:15px;
-  width:138px;
-  text-align:center;
-}
-
-.nav a:hover, .nav a.selected {
-  text-decoration:none;
-  background:#0A5D39;
-  color:white;
-}
 
 table {
   width: 800px;
