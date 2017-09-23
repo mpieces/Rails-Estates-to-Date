@@ -18,33 +18,51 @@
           <p class="header-subtext">Estate Sales & Auctions in the Seattle area</p>
         </div>
       </div>
+      <div class="container" id="nav-bar">
+         <nav class="navbar navbar-inverse" role="navigation" style="background-color: #002d1b;">
+          <div class="container">
+            <div class="navbar-header">
+              <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#left-nav">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="navbar-collapse collapse" id="left-nav">
+              <ul class="nav nav-pills navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item"><%= link_to 'Find Estate Sales', estatesales_path %></li>
+                <li class="nav-item"><%= link_to 'Hire a Company', companies_path %></li>
+                <li class="nav-item"><%= link_to 'List your Sale', list_path %></li>
+                <li class="nav-item"><a href='#'>Contact Us</a></li>
+              </ul>
 
-       <div class="nav">
-        <%= link_to 'Find Estate Sales', estatesales_path %>
+              <ul class="nav nav-pills navbar-nav navbar-right" id="right-nav">
+                <% if !logged_in? %>
+                  <li class="nav-item"><%= link_to 'Sign Up', new_user_path %></li>
+                  <li class="nav-item"><%= link_to 'Log In', login_path %></li>
+                <% end %>
+                <%  if logged_in? %>
+                  <li class="nav-item"><%= link_to 'Log Out', logout_path %></li>
+                <% end %>
+              </ul>
+            </div>
+
+
+          </div>
+        </nav>
+      </div>
+
 
           <!-- Need to add these later: -->
           <!-- <a href="#">Auctions</a> -->
           <!-- <a href="#">Out & About</a> -->
-        <%= link_to 'Hire a Company', companies_path %>
-        <%= link_to 'List your Sale', list_path %>
-        <a href='#'>Contact Us</a>
-        <% if !logged_in? %>
-          <%= link_to 'Sign Up', new_user_path %>
-          <%= link_to 'Log In', login_path %>
-        <% end %>
-        <%  if logged_in? %>
-          <%= link_to 'Log Out', logout_path %>
-        <% end %>
-       </div>
+
+
 
     <div id="main-container" class="container">
-      <div class="row">
-        <div class="col-md-8">
 
           <%= yield %>
 
-        </div>
-      </div>
     </div>
   </body>
 </html>

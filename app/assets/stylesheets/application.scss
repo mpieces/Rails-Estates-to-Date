@@ -65,10 +65,29 @@ body {
   max-width: 910px;
   margin: 0 auto;
   background: white;
-  padding-top: 100px;
+  padding-top: 75px;
 }
 
+.navbar {
+  margin-bottom: 0;
+}
 
+#nav-bar, .navbar-collapse {
+  max-width: 940px;
+}
+
+#right-nav {
+  float: right;
+  margin-right: 50px;
+}
+
+/*tr:hover {
+  background-color: #c3e6e5;
+}*/
+
+
+
+/*
 
 .nav {
   height: 37px;
@@ -104,12 +123,9 @@ body {
   font-size: 20px;
 }
 
-
-
 a, a:visited, a:active {
   text-decoration:none;
   color: gray;
-
 }
 
 a:hover {
@@ -154,32 +170,6 @@ Sign Up or Sign In Box - not in use now*/
   height: 80px;
   width: 275px;
   text-align: right;
-}
-
-/*Table on home page: */
-.sales-container {
-  margin: 0 auto;
-  width: 80%;
-}
-
-
-
-
-table {
-  width: 800px;
-}
-
-td {
-  text-align: left;
-  padding: 5px;
-}
-
-tr.even {
-  background-color: gray;
-}
-
-tr:hover {
-  background-color: #c3e6e5;
 }
 
 .favorites {

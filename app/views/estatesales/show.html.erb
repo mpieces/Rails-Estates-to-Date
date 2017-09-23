@@ -1,9 +1,9 @@
 
 <div class="row">
-  <div class="col span_4">
+  <div class="col-md-6 favorites">
     <div class="favorites">
   <!-- Add sale to favorites -->
-      <p>
+      <p class="lead">
         <% if logged_in? %>
           <%- unless current_user.favorite_sales.exists?(id: @sale.id) -%>
           <%= button_to 'Add this sale to favorites', favorite_sales_path(sale_id: @sale), method: :post %>
@@ -14,56 +14,60 @@
         <% end %>
 
   <!-- See all favorites link -->
-      <p>
+      <p class="lead">
         <%= link_to 'See all favorites', favorite_sales_path(sale_id: @sale) %>
       </p>
         <% end %>
+      </div>
     </div>
+    <div class="col-md-6">
+      <div id="map-canvas">
+        Google map inset
+      </div>
+    </div>
+  </div>
       <!-- AJAX CALLS NEED TO ADD: -->
       <!--  div id = star container -->
       <!--  div id = favorites container  -->
-  </div>
 
-  <div class="col span_4">
+
+    <div class="row">
+      <div class="col-md-12">
      <!-- Individual Sale Details: -->
-    <div id="sale-container" data-address="<%= @sale.address %>, <%= @sale.city%>, <%= @sale.state %>, <%= @sale.zip_code %>">
+        <div id="sale-container" data-address="<%= @sale.address %>, <%= @sale.city%>, <%= @sale.state %>, <%= @sale.zip_code %>">
 
-      <h1><%= @sale.title %></h1>
+          <h1><%= @sale.title %></h1>
 
-      <h2><%= @sale.address %></h2>
-      <h2><%= @sale.city%>, <%=@sale.state%></h2>
-      <h2><%= @sale.zip_code %></h2>
-      <h2><%= @sale.start_date %> - </h2>
-      <h2><%= @sale.end_date %></h2>
-      <h2><%= @sale.times %></h2>
-      <h3><em>Description:</em></h3>
-      <h3><%= @sale.description %></h3>
-      <h3><em>Forms of Payment Accepted:</em> <%= @sale.forms_of_payment %></h3>
-      <h3><em>Special Instructions:</em> <%= @sale.special_inst %></h3>
+          <h2><%= @sale.address %></h2>
+          <h2><%= @sale.city%>, <%=@sale.state%></h2>
+          <h2><%= @sale.zip_code %></h2>
+          <h2><%= @sale.start_date %> - </h2>
+          <h2><%= @sale.end_date %></h2>
+          <h2><%= @sale.times %></h2>
+          <h3><em>Description:</em></h3>
+          <h3><%= @sale.description %></h3>
+          <h3><em>Forms of Payment Accepted:</em> <%= @sale.forms_of_payment %></h3>
+          <h3><em>Special Instructions:</em> <%= @sale.special_inst %></h3>
       <!-- NEED TO ADD PHOTOS OF SALE -->
-      <h3>Photos: <img src="<%= @sale.img_url %>"></h3>
+          <h3>Photos: <img src="<%= @sale.img_url %>"></h3>
 
 
       <h3>
         <%= link_to 'Back', estatesales_path %>
       </h3>
 
-    <!-- Edit listing button:  -->
+    <!-- Edit listing button (ONLY IF ADMIN!):  -->
       <h3>
         <%= link_to 'Edit this Listing', edit_estatesale_path(@sale) %>
       </h3>
 
-    <!-- Delete listing button:  -->
+    <!-- Delete listing button (ONLY IF ADMIN!):  -->
       <h3>
         <%= link_to 'Delete', @sale, method: :delete, data: { confirm: 'Are you sure?' } %>
       </h3>
     </div>
   </div>
-  <div class="col span_4">
-    <div id="map-canvas">
-      Google map inset
-    </div>
-  </div>
+
 </div>
 
 <script type='text/javascript'>
