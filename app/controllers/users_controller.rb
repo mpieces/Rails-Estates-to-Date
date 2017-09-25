@@ -8,11 +8,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if @user.save
+    if @user.id
       session[:user_id] = @user.id
       redirect_to estatesales_path
     else
       render 'new'
+      flash[:danger] = 'There was a problem creating your account.'
     end
   end
 

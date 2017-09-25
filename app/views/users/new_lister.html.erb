@@ -1,0 +1,23 @@
+ <!--  Use Javascript to populate rest of form based on response: -->
+  <p>
+     <%= f.select(:type, [["Shopper"], ["Lister"]]) %>
+  </p>
+
+  <p>
+    <%= f.label :company_name %>
+    <%= f.text_field :company_name %>
+  </p>
+  <p>
+    <%= f.label :owner_name %>
+    <%= f.text_field :owner_name %>
+  </p>
+  <p>
+
+   <!--  Make url_field? -->
+    <%= f.label :company_website %>
+    <%= f.url_field :company_url %>
+  </p>
+  <p>
+    <%= f.label :phone_number %>
+    <%= f.telephone_field :phone_number %>
+  </p>

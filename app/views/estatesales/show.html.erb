@@ -1,13 +1,18 @@
 
 <div class="row">
-  <div class="col-md-6 favorites">
-    <div class="favorites">
+  <div class="col-md-6">
+    <div class="favorites-container">
   <!-- Add sale to favorites -->
       <p class="lead">
+        <% if !logged_in? %>
+          <div id="favorites-not-logged-in">
+            <%= button_to 'Add Sale to Favorites', login_path, method: :get %>
+          </div>
+        <% end %>
         <% if logged_in? %>
           <%- unless current_user.favorite_sales.exists?(id: @sale.id) -%>
           <%= button_to 'Add this sale to favorites', favorite_sales_path(sale_id: @sale), method: :post %>
-          <%- end -%>
+          <% end %>
       </p>
         <% if notice %>
           <p id="notice"><%= notice %></p>
@@ -19,35 +24,33 @@
       </p>
         <% end %>
       </div>
-    </div>
-    <div class="col-md-6">
+  </div>
+
+  <div class="col-md-6">
       <div id="map-canvas">
         Google map inset
       </div>
-    </div>
   </div>
+</div>
       <!-- AJAX CALLS NEED TO ADD: -->
       <!--  div id = star container -->
       <!--  div id = favorites container  -->
-
 
     <div class="row">
       <div class="col-md-12">
      <!-- Individual Sale Details: -->
         <div id="sale-container" data-address="<%= @sale.address %>, <%= @sale.city%>, <%= @sale.state %>, <%= @sale.zip_code %>">
 
-          <h1><%= @sale.title %></h1>
-
-          <h2><%= @sale.address %></h2>
-          <h2><%= @sale.city%>, <%=@sale.state%></h2>
-          <h2><%= @sale.zip_code %></h2>
-          <h2><%= @sale.start_date %> - </h2>
-          <h2><%= @sale.end_date %></h2>
-          <h2><%= @sale.times %></h2>
-          <h3><em>Description:</em></h3>
-          <h3><%= @sale.description %></h3>
-          <h3><em>Forms of Payment Accepted:</em> <%= @sale.forms_of_payment %></h3>
-          <h3><em>Special Instructions:</em> <%= @sale.special_inst %></h3>
+          <h3><%= @sale.title %></h3>
+          <p><%= @sale.lister %></p>
+          <p class="lead"><%= @sale.address %></p>
+          <p class="lead"><%= @sale.city%>, <%=@sale.state%> <%= @sale.zip_code %></p>
+          <p class="lead"><%= @sale.start_date %> - <%= @sale.end_date %></p>
+          <p class="lead"><%= @sale.times %></p>
+          <h3>Description:</h3>
+          <p class="lead"><%= @sale.description %></p>
+          <h3>Forms of Payment Accepted: </h3><p><%= @sale.forms_of_payment %></p>
+          <h3>Special Instructions: </h3><p><%= @sale.special_inst %></p>
       <!-- NEED TO ADD PHOTOS OF SALE -->
           <h3>Photos: <img src="<%= @sale.img_url %>"></h3>
 

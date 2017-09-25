@@ -1,33 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/*  12 COLUMN : RESPONSIVE GRID SYSTEM
-  DEVELOPER : DENIS LEBLANC
-  URL : http://responsive.gs
-  VERSION : 3.0
-  LICENSE : GPL & MIT */
-
-/*  SET ALL ELEMENTS TO BOX-SIZING : BORDER-BOX */
-html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
-  }
-
 html, body {
  margin: 0;
  padding: 0;
- height: 100%;
+
 }
 
 body {
   background: white;
   background:url("http://i.imgur.com/BaKvHel.jpg") center top no-repeat;
+  /*overflow: auto;*/
 
   /*font-family: "Myriad Pro","Helvetica Neue", Helvetica, Arial, sans-serif;*/
   /*font-size: 14px;*/
@@ -35,6 +18,16 @@ body {
   /*color: #333;*/
   /*text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);*/
   /*text-align:center;*/
+}
+
+ /*MAIN CONTAINER*/
+#main-container {
+  height: 100%;
+  /*min-height: 2000px; */  /*??*/
+  max-width: 910px;
+  margin: 0 auto;
+  background: white;
+  padding-top: 75px;
 }
 
 .jumbotron {
@@ -59,15 +52,6 @@ body {
   color: white;
 }
 
- /*MAIN CONTAINER*/
-#main-container {
-  height: 100%;
-  max-width: 910px;
-  margin: 0 auto;
-  background: white;
-  padding-top: 75px;
-}
-
 .navbar {
   margin-bottom: 0;
 }
@@ -81,15 +65,50 @@ body {
   margin-right: 50px;
 }
 
-/*tr:hover {
-  background-color: #c3e6e5;
+/* ESTATE SALE SHOW PAGE */
+.favorites-container {
+  height: 250px;
+}
+
+/*Google map inset: */
+#map-canvas {
+  border: 2px solid gray;
+  height: 250px;
+  width: 100%;
+  /*position: relative;*/
+  /*top: 50px;*/
+}
+
+#sale-container {
+  height: 100%;
+}
+
+/*
+Sign Up or Sign In Box - not in use now*/
+#favorites-container {
+  visibility: hidden;
+  height: 80px;
+  width: 275px;
+  border: 2px solid gray;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#star-container {
+  height: 80px;
+  width: 275px;
+  text-align: right;
+}
+
+/*.favorites {
+  position: relative;
+  top: 50px;
 }*/
 
 
 
-/*
 
-.nav {
+/*.nav {
   height: 37px;
   z-index: 10;
   text-align: center;
@@ -146,34 +165,4 @@ a:hover {
 .button {
   border-radius: 5px;
 }
-
-/*Google map inset: */
-#map-canvas {
-  border: 2px solid gray;
-  height: 250px;
-  width: 100%;
-  position: relative;
-  top: 50px;
-}
-/*
-Sign Up or Sign In Box - not in use now*/
-#favorites-container {
-  visibility: hidden;
-  height: 80px;
-  width: 275px;
-  border: 2px solid gray;
-  border-radius: 10px;
-  padding: 5px;
-}
-
-#star-container {
-  height: 80px;
-  width: 275px;
-  text-align: right;
-}
-
-.favorites {
-  position: relative;
-  top: 50px;
-}
-
+*/

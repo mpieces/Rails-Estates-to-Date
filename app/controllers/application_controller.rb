@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
    # makes methods available to views:
-   helper_method :current_user, :logged_in?
+   helper_method :current_user, :logged_in?, :is_admin?
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
   # Returns T if the user is logged in; F otherwise.
   def logged_in?
     !current_user.nil?
+  end
+
+  def is_admin?
+    current_user && current_user.admin?
   end
 
 end
