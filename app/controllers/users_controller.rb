@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if @user.id
+    if @user.save
       session[:user_id] = @user.id
       redirect_to estatesales_path
     else
