@@ -53,9 +53,11 @@
           <h3>Special Instructions: </h3><p><%= @sale.special_inst %></p>
       <!-- NEED TO ADD PHOTOS OF SALE -->
           <h3>Photos:</h3>
-            <% @sale.images.each do |image| %>
+            <% @sale.images.each_with_index do |image, index| %>
               <%= image_tag(image.url(:thumb)) %>
+              <%= link_to "Delete", estatesale_image_path(image, index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" } %>
             <% end %>
+
       <h3>
         <%= link_to 'Back', estatesales_path %>
       </h3>
