@@ -52,8 +52,10 @@
           <h3>Forms of Payment Accepted: </h3><p><%= @sale.forms_of_payment %></p>
           <h3>Special Instructions: </h3><p><%= @sale.special_inst %></p>
       <!-- NEED TO ADD PHOTOS OF SALE -->
-          <h3>Photos: <img src="<%= @sale.img_url %>"></h3>
-
+          <h3>Photos:</h3>
+            <% @sale.images.each do |image| %>
+              <%= image_tag image %>
+            <% end %>
 
       <h3>
         <%= link_to 'Back', estatesales_path %>

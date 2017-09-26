@@ -30,6 +30,8 @@ gem 'faker'
 gem 'httparty'
 gem 'geocoder'
 gem 'bootstrap-sass', '3.3.7'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

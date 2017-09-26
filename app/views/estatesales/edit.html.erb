@@ -68,8 +68,8 @@
       <%= f.text_field :special_inst, class: 'form-control', rows: 10 %>
   </div>
   <div class="field form-group">
-      <%= f.label :img_url, 'Images' %>
-      <%= f.text_field :img_url, class: 'form-control', rows: 10 %>
+      <%= f.label :images, 'Photos' %>
+      <%= f.file_field :images, multiple: true, class: 'form-control' %>
   </div>
 
   <br>

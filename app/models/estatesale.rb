@@ -4,6 +4,10 @@ class Estatesale < ActiveRecord::Base
   geocoded_by :full_address
   after_validation :geocode
 
+  attr_accessor :photos
+  mount_uploaders :images, ImagesUploader
+  serialize :images, JSON
+
 
   belongs_to :lister
   #added (different from Sinatra set up):
