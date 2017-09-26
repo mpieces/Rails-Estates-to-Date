@@ -1,20 +1,15 @@
 <!-- SHOWS ALL FAVORITED SALES -->
 
-<h2><%= current_user.username %>'s Favorite Sales: </h2>
+<h2 class="text-center"><%= current_user.username %>'s Favorite Sales: </h2>
 
-<% if notice %>
- <p id='notice'><%= notice %>
-<% end %>
-
-
-<table>
-  <thead>
+<table class="table table-hover table-responsive">
+  <thead class="thead-default">
     <tr>
-      <td><h3><strong>Dates/Times</strong></h3></td>
+      <td><h3><strong>Dates / Times</strong></h3></td>
       <td><h3><strong>Sale Name / Company</strong></h3></td>
       <td><h3><strong>Location</strong></h3></td>
-      <!--   Need to add distance: -->
-      <!-- <td><h3><strong>Distance</strong></h3></td> -->
+      <td><h3><strong>Distance</strong></h3></td>
+      <td><h3><strong>Notes</strong></h3></td>
     </tr>
   </thead>
   <tbody>
@@ -22,12 +17,21 @@
       <% @favorites.each do |f| %>
         <tr>
           <td><%= f.start_date%> - <%= f.end_date%><br><%= f.times%></td>
-          <td><a href="/estatesales"><%=f.title%></a><br>Lasted updated: <%=f.updated_at%></td>
+          <td><%= link_to f.title, estatesale_path(f) %><br>Last updated: <%=f.updated_at%></td>
           <td><%=f.address%><br><%=f.city%>, <%=f.state%>  <%=f.zip_code%></td>
-             <!--  Need to re-work notes part -->
-          <td>Notes: <input type="text" name="notes"><input type="submit" value="Save"></td>
 
-          <td><%= link_to 'Remove', favorite_sales_path(f), method: :delete %></td>
+          <td>
+            <% if params[:zip_code].present? %>
+              <%= @sale.distance_from(params[:zip_code]) %> miles
+            <% end %>
+          </td>
+             <!--  Need to re-work notes part -->
+          <td>
+
+            Notes: <input type="text" name="notes"><input type="submit" value="Save">
+          </td>
+
+          <td><%= link_to 'Remove', favorite_sale_path(f), method: :delete, data: { confirm: 'Are you sure?'} %></td>
         </tr>
       <%end%>
 

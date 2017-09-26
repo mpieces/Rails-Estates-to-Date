@@ -60,6 +60,7 @@
       </h3>
 
     <!-- Edit listing button (ONLY IF ADMIN!):  -->
+    <% if admin? %>
       <h3>
         <%= link_to 'Edit this Listing', edit_estatesale_path(@sale) %>
       </h3>
@@ -68,6 +69,7 @@
       <h3>
         <%= link_to 'Delete', @sale, method: :delete, data: { confirm: 'Are you sure?' } %>
       </h3>
+    <% end %>
     </div>
   </div>
 

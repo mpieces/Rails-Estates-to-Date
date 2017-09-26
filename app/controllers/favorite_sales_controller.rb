@@ -21,8 +21,7 @@ class FavoriteSalesController < ApplicationController
 
   def destroy
     Favorite.where(favorited_id: @sale.id, user_id: current_user.id).destroy
-
-    # redirect_to favorite_sales_path, notice: 'Sale is no longer in favorites'
+    redirect_to favorite_sales_path, notice: 'Sale is no longer in favorites'
   end
 
   private
@@ -30,4 +29,5 @@ class FavoriteSalesController < ApplicationController
   def set_sale
     @sale = Estatesale.find(params[:sale_id] || params[:id])
   end
+
 end

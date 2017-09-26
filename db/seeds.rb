@@ -1,3 +1,4 @@
+User.create(username: "mer", password: "weruio", email: "mer0522@gmail.com", admin: true)
 
 5.times do
   User.create(type: "Shopper", username: Faker::Name.first_name, password: Faker::Internet.password(3,5), email: Faker::Internet.email, company_name: Faker::Company.name, owner_name: Faker::Name.name, company_url: Faker::Internet.url, phone_number: Faker::PhoneNumber.phone_number)

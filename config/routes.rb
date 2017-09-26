@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # resources :favorites
+
   root 'estatesales#index'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :users
   get 'companies' => 'companies#index'
   get 'list' => 'estatesales#list'
-  # resources :users do
-  #   resources :favorites
+#   resources :users do
+#     resources :favorite_sales
 # end
   resources :favorite_sales
 end

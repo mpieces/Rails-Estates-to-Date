@@ -7,7 +7,7 @@ class CreateFavorites < ActiveRecord::Migration
       t.references :user, index: true
       t.references :shopper, index: true
 
-      t.string :notes
+      # t.text_area :notes
 
       t.timestamps null: false
     end

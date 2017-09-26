@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-   #Sign Up New Users
+   #Sign Up For New Users
   def new
     @user = User.new
   end
@@ -13,7 +13,6 @@ class UsersController < ApplicationController
       redirect_to estatesales_path
     else
       render 'new'
-      flash[:danger] = 'There was a problem creating your account.'
     end
   end
 
