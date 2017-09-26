@@ -1,5 +1,5 @@
 class Estatesale < ActiveRecord::Base
-  validates :title, :city, :zip_code, :description, :start_date, :end_date, :times, presence: true
+  validates_presence_of :title, :address, :city, :state, :zip_code, :start_date, :end_date, :times, :description, :forms_of_payment
   validates :title, uniqueness: true
   geocoded_by :full_address
   after_validation :geocode

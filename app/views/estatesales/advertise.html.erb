@@ -3,19 +3,20 @@
 <p>We offer several options for comapnies listing their sales and for individuals seeking to privately list a single sale. Select the option below that best describes you: </p>
 <div class="row">
   <div class="col-md-6">
-    <a href="#">
-    <div class="card h-100" style="background-color: gray;">
+    <%= link_to new_estatesale_path do %>
+    <div class="card h-100">
       <div class="card-block">
         <h3 class="card-title">I'm an individual hosting a sale.</h3>
       </div>
       <%= image_tag("individual_icon.png", class: "card-img-bottom") %>
     </div>
-  </a>
+    <% end %>
+
   </div>
   <div class="col-md-6">
     <a href="#">
 
-    <div class="card h-100" style="background-color: gray;">
+    <div class="card h-100">
       <div class="card-block">
         <h3 class="card-title">I'm a company that liquidates estates.</h3>
 
