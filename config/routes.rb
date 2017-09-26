@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
-  resources :estatesales
+  resources :estatesales do
+    resources :images, :only => [:create, :destroy]
+  end
+
   resources :users
   get 'companies' => 'companies#index'
   get 'list' => 'estatesales#list'
