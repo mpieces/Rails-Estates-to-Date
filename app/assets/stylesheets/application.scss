@@ -27,7 +27,7 @@ body {
   max-width: 910px;
   margin: 0 auto;
   background: white;
-  padding-top: 75px;
+  padding-top: 25px;
 }
 
 .jumbotron {
@@ -79,6 +79,22 @@ body {
   /*top: 50px;*/
 }
 
+.company-info {
+  border: 2px solid gray;
+}
+
+.favorites-container {
+  border: 2px solid gray;
+  text-align: center;
+}
+
+#filled {
+  visibility: hidden;
+}
+
+
+/*###################################*/
+
 #sale-container {
   height: 100%;
 }
@@ -90,7 +106,7 @@ body {
 
 /*
 Sign Up or Sign In Box - not in use now*/
-#favorites-container {
+/*#favorites-container {
   visibility: hidden;
   height: 80px;
   width: 275px;
@@ -103,7 +119,7 @@ Sign Up or Sign In Box - not in use now*/
   height: 80px;
   width: 275px;
   text-align: right;
-}
+}*/
 
 /*.favorites {
   position: relative;

@@ -14,6 +14,7 @@ class Estatesale < ActiveRecord::Base
   has_many :favorites
   has_many :shoppers, through: :favorites
 
+
 # To determine distance from zip code input:
   def distance_from(from)
     GoogleDistanceService.get_distance(from, full_address).round(2)

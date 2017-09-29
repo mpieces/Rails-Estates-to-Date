@@ -28,7 +28,7 @@ class ImagesController < ApplicationController
   def remove_image_at_index(index)
     remaining_images = @sale.images # copy the array
     deleted_image = remaining_images.delete_at(index) # delete the target image
-    deleted_image.try(:remove!) # delete image from S3
+    # deleted_image.try(:remove!) # delete image from S3
     @sale.images = remaining_images # re-assign back
   end
 

@@ -8,8 +8,12 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
 
+      respond_to do |format|
+        format.html { redirect_to estatesales_path }
+        format.json
+      end
       ######## change later:  #######
-      redirect_to estatesales_path
+      # redirect_to estatesales_path
     else
       # flash.now[:danger] = 'Invalid email/password combination'
       render 'new'  #goes to sessions/new

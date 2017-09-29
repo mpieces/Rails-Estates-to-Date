@@ -13,7 +13,10 @@ class FavoriteSalesController < ApplicationController
 
   def create
     if Favorite.create(favorited: @sale, user: current_user)
-      redirect_to @sale, notice: 'Sale has been added to favorites'
+      respond_to do |format|
+        format.html { redirect_to @sale, notice: 'Sale has been added to favorites!'}
+        format.js
+      end
     else
       redirect_to @sale, alert: 'Something went wrong!'
     end
