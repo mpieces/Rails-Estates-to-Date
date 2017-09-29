@@ -17,7 +17,7 @@
       <% @favorites.each do |f| %>
         <tr>
           <td><%= f.start_date%> - <%= f.end_date%><br><%= f.times%></td>
-          <td><%= link_to f.title, estatesale_path(f) %><br>Last updated: <%=f.updated_at%></td>
+          <td><%= link_to f.title, estatesale_path(f) %><br>Last updated: <%=f.updated_at %></td>
           <td><%=f.address%><br><%=f.city%>, <%=f.state%>  <%=f.zip_code%></td>
 
           <td>

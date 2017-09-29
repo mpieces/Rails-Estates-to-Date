@@ -38,12 +38,12 @@
       <p class="lead">
         <% if !logged_in? %>
           <div id="favorites-not-logged-in">
-            <%= link_to login_path, method: :get, remote: true do %>
+            <%= link_to login_path, method: :get do %>
               <button class="btn btn-default"><i id="empty" class="icon icon-star-o icon-2x"></i> Add this Sale to Favorites</button>
             <% end %>
           </div>
 
-          <div id="login-form" style="display:none;"></div>
+          <!-- <div id="login-form" style="display:none;"></div> -->
 
         <% end %>
 
@@ -57,16 +57,19 @@
               Add this Sale to Favorites
             <% end %>
           <% end %>
+  <!-- See all favorites link -->
+      <p class="lead">
+        <%= link_to 'See all favorites', favorite_sales_path(sale_id: @sale) %>
+      </p>
+
       <% end %>
       </p>
         <% if notice %>
           <p id="notice"><%= notice %></p>
         <% end %>
 
-  <!-- See all favorites link -->
-      <p class="lead">
-        <%= link_to 'See all favorites', favorite_sales_path(sale_id: @sale) %>
-      </p>
+
+
 
     </div>
 
