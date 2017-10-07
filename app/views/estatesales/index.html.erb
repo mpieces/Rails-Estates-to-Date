@@ -40,7 +40,7 @@
       <% @sales.each do |sale| %>
       <tr>
         <td><%=sale.start_date%> - <%=sale.end_date%><br><%=sale.times%></td>
-        <td><%= link_to sale.title, estatesale_path(sale) %><br>Lasted updated: <%=sale.updated_at%></td>
+        <td><%= link_to sale.title, estatesale_path(sale) %><br>Lasted updated: <%=sale.updated_at.strftime("%m.%d.%y")%></td>
         <td><%=sale.address%><br><%=sale.city%>, <%=sale.state%>  <%=sale.zip_code%></td>
         <td>
           <% if params[:zip_code].present? %>
