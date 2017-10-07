@@ -1,9 +1,25 @@
 
 //= require jquery
+//= require fancybox
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+
+// $(document).ready(function() {
+//   $("a.fancybox").fancybox();
+// });
+
+$(document).ready(function() {
+  $("a.grouped_elements").fancybox({
+      'transitionIn'  :   'elastic',
+      'transitionOut' :   'elastic',
+      'speedIn'       :   600,
+      'speedOut'      :   200,
+      'overlayShow'   :   false
+  });
+});
 
 // //Google Maps: /////////////////////
 // function initialize() {

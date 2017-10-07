@@ -93,7 +93,7 @@
         <% end %>
   <!-- See all favorites link -->
           <p class="lead">
-            <%= link_to 'See all favorites', favorite_sales_path(sale_id: @sale) %>
+            <%= link_to 'See all favorites', favorite_sales_path(sale_id: @sale), class: 'btn btn-default' %>
           </p>
       <% end %>
 
@@ -119,12 +119,18 @@
           <p class="lead"><%= @sale.description %></p>
           <h3>Forms of Payment Accepted: </h3><p><%= @sale.forms_of_payment %></p>
           <h3>Special Instructions: </h3><p><%= @sale.special_inst %></p>
-      <!-- NEED TO ADD PHOTOS OF SALE -->
+
+      <!-- PHOTOS OF SALE -->
           <h3>Photos:</h3>
+
             <% @sale.images.each_with_index do |image, index| %>
-              <%= image_tag(image.url(:thumb)) %>
+             <!-- link needed for fancybox usage -->
+              <%= link_to image.url, {:class => "grouped_elements", :rel => "one_sale"} do %>
+                <%= image_tag(image.url(:thumb)) %>
+              <% end %>
+
               <%= link_to "Delete", estatesale_image_path(image, index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" } %>
-            <% end %>
+            <% end %> <!-- end of each_with_index loop -->
 
       <h3>
         <%= link_to 'Back', estatesales_path %>

@@ -32,6 +32,7 @@ gem 'geocoder'
 gem 'bootstrap-sass', '3.3.7'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
+gem 'fancybox2-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
