@@ -2,13 +2,13 @@
   <div class="col-md-6 col-md-offset-3">
 <!-- Should welcome both user types -->
 <% if logged_in? %>
-<h1>Welcome, <%= current_user.username %>!</h1>
+<h1 class="text-center">Welcome, <%= current_user.username %>!</h1>
 <% end %>
    </div>
 </div>
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-6 col-md-offset-3">
 <!-- Zip code search form -->
     <div class="well">
       <p>Search for sales in you area by zip code:</p>
@@ -29,6 +29,7 @@
   <table class="table table-hover table-responsive">
     <thead class="thead-default">
       <tr>
+        <td></td>
         <td><h3><strong>Dates / Times</strong></h3></td>
         <td><h3><strong>Company / Name</strong></h3></td>
         <td><h3><strong>Location</strong></h3></td>
@@ -39,6 +40,7 @@
       <hr>
       <% @sales.each do |sale| %>
       <tr>
+        <td><%=sale.featured_photo %></td>
         <td><%=sale.start_date%> - <%=sale.end_date%><br><%=sale.times%></td>
         <td><%= link_to sale.title, estatesale_path(sale) %><br>Lasted updated: <%=sale.updated_at.strftime("%m.%d.%y")%></td>
         <td><%=sale.address%><br><%=sale.city%>, <%=sale.state%>  <%=sale.zip_code%></td>

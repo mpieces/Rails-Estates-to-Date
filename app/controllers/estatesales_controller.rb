@@ -51,7 +51,7 @@ class EstatesalesController < ApplicationController
 
   private
     def estatesale_params
-      params.require(:estatesale).permit(:title, :address, :city, :state, :zip_code, :start_date, :end_date, :times, :description, :forms_of_payment, :special_inst, {images: []})
+      params.require(:estatesale).permit(:featured_image, :title, :address, :city, :state, :zip_code, :start_date, :end_date, :times, :description, :forms_of_payment, :special_inst, {images: []})
     end
 
 end

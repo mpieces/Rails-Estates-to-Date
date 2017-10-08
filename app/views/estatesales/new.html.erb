@@ -31,6 +31,13 @@
       </ul>
   <% end %>
 
+  <!-- FEATURED PHOTO: -->
+  <div class="field form-group">
+     <%= f.label :featured_photo, 'Featured Photo' %>
+     <%= image_tag(:featured_photo) %>
+     <%= f.file_field :featured_photo, class: 'form-control' %>
+  </div>
+
   <div class="field form-group">
       <%= f.label :title, 'Title (give your sale a name)' %>
       <%= f.text_field :title, class: 'form-control' %>
