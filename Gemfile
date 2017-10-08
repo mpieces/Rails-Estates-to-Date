@@ -33,6 +33,7 @@ gem 'bootstrap-sass', '3.3.7'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'fancybox2-rails'
+gem 'better_errors', '~> 2.1', '>= 2.1.1'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

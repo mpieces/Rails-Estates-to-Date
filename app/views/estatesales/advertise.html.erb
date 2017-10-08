@@ -1,27 +1,30 @@
 <h2>Advertise your sales with Estates-to-Date.com!</h2>
-
+<br>
 <p class="lead">We offer several options for companies listing their sales and for individuals seeking to privately list a single sale. Select the option below that best describes you: </p>
+<br>
 <div class="row">
   <div class="col-md-6">
     <%= link_to new_estatesale_path do %>
-    <div class="card h-100">
-      <div class="card-block">
+    <div class="card card-inverse card-1">
+      <%= image_tag("private_sale.png", class: "card-img") %>
+      <div class="card-img-overlay">
         <h3 class="card-title">I'm an individual hosting a sale.</h3>
       </div>
-      <%= image_tag("individual_icon.png", class: "card-img-bottom") %>
+
     </div>
+     </div>
     <% end %>
 
-  </div>
+
   <div class="col-md-6">
     <a href="#">
-
-    <div class="card h-100">
-      <div class="card-block">
-        <h3 class="card-title">I'm a company that liquidates estates.</h3>
+      <div class="card card-inverse card-2">
+      <%= image_tag("company_sale.jpg", class: "card-img, company-image") %>
+       <div class="card-img-overlay">
+        <h3 class="card-title">I'm a company that hosts sales.</h3>
 
       </div>
-       <%= image_tag("company_icon_2.png", class: "card-img-bottom") %>
+
     </div>
   </a>
   </div>

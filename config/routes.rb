@@ -7,14 +7,14 @@ Rails.application.routes.draw do
   resources :estatesales do
     resources :images, :only => [:create, :destroy]
   end
-
+  resources :favorite_sales
   resources :users
   get 'companies' => 'companies#index'
-  get 'list' => 'estatesales#list'
+  get 'list' => 'estatesales#list'  # to advertise/list a sale
 #   resources :users do
 #     resources :favorite_sales
 # end
-  resources :favorite_sales
+
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

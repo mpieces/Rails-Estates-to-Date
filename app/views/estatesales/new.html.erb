@@ -1,11 +1,24 @@
 <!-- NEW SALE LISTING FORM (for individuals) -->
-
+<h3>What's included with your private sale listing:</h3
+<ul>
+  <li>Unlimited description space</li>
+  <li>First 50 pictures free</li>
+  <li>Email notifications</li>
+  <li>Secure mapping service</li>
+</ul>
+<h3>How to get started!</h3>
+<ol>
+  <li>Contact us for pricing information.</li>
+  <li>Fill out all the details about your sale in the form below.</li>
+  <li>Upload photos of the sale.</li>
+</ol>
+<br>
 <h2 class="text-center">New Sale Listing Form</h2>
 <br>
 <div class="row">
   <div class="col-md-12">
 
-<%= form_for @sale, :html => {multipart => true} do |f| %>
+<%= form_for @sale do |f| %>
 
   <% if @sale.errors.any? %>
     <div id="error_explanation">

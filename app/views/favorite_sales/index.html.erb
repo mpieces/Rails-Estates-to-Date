@@ -20,7 +20,7 @@
           <td><%= link_to f.title, estatesale_path(f) %><br>Last updated: <%=f.updated_at.strftime("%m.%d.%y") %></td>
           <td><%=f.address%><br><%=f.city%>, <%=f.state%>  <%=f.zip_code%></td>
 
-          <td>
+          <td>  <!-- Need to add distance here:  -->
             <% if params[:zip_code].present? %>
               <%= @sale.distance_from(params[:zip_code]) %> miles
             <% end %>
