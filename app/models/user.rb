@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :favorites
   has_many :favorite_sales, through: :favorites, source: :favorited, source_type: 'Estatesale'
 
+  has_many :notes, through: :favorites
+
 
 end
 

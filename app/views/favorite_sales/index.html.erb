@@ -27,8 +27,10 @@
           </td>
              <!--  Need to re-work notes part -->
           <td>
-
-            Notes: <input type="text" name="notes"><input type="submit" value="Save">
+            <% @notes.each do |note| %>
+              <%= note.description %>
+            <% end %>
+            <!-- Notes: <input type="text" name="notes"><input type="submit" value="Save"> -->
           </td>
 
           <td><%= link_to 'Remove', favorite_sale_path(f), method: :delete, data: { confirm: 'Are you sure?'} %></td>
